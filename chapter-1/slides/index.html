@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Meet React.js</title>
@@ -16,6 +17,7 @@
       background-size: 50% auto;
       background-position: -25% -60%;
     }
+
     .reset-img {
       border: 0 !important;
       background: none !important;
@@ -23,46 +25,63 @@
     }
   </style>
 </head>
+
 <body>
   <div class="reveal">
     <div class="slides">
       <section>
         <a style="position: fixed; left: 20px; font-size: 30px" href="../../">◀</a>
-        <img class="reset-img" width="200px" src="../../resources/assets/react_logo_wordmark.png">
-        <h2>Meet React.js</h2>
-        <p>Nabil Naffar<br>nn605g@intl.att.com</p>
+        <h3>The basics</h3>
       </section>
-
       <section>
-        <img class="reset-img" width="700px" src="../../resources/assets/react-ts.png">
-        <h2>Meet React.ts</h2>
+        <img style="display: inline-block; margin: 0;" class="reset-img" width="70px" src="../../resources/assets/tc39.png">
+        <h3 style="display: inline-block;">What is Ecma Script?</h3>
       </section>
-
       <section>
-        <h2>Typescript cheatsheet</h2>
-        <img style="position: fixed; bottom: 20px; left: 20px;" class="reset-img" width="100px" src="../../resources/assets/ts-logo.png">
+        <h3>ES5 ► ES2015</h3>
       </section>
-
+      <section>
+        <h3>ESNext</h3>
+        <p>http://kangax.github.io/compat-table/esnext/</p>
+        <iframe width="100%" height="500px" src="http://kangax.github.io/compat-table/esnext/"></iframe>
+      </section>
+      <section>
+        <img style="display: inline-block; margin: 0;" class="reset-img" width="70px" src="../../resources/assets/ts-logo.png">
+        <h3 style="display: inline-block;">Typescript</h3>
+      </section>
+      <section>
+        <img class="reset-img" width="400px" src="../../resources/assets/es-ts.png">
+        <h3>ES5 / ES2015 / ESNext / Typescript</h3>
+      </section>
+      <section>
+        <img class="reset-img" height="100px" src="../../resources/assets/react_logo_wordmark.png">
+        <h3>Meet React.js</h3>
+      </section>
+      <section>
+        <img class="reset-img" height="100px" src="../../resources/assets/react-ts.png">
+        <h3>Meet React.ts</h3>
+      </section>
     </div>
   </div>
   <script src="../../resources/reveal.js/lib/js/head.min.js"></script>
   <script src="../../resources/reveal.js/js/reveal.js"></script>
   <script>
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: true,
-    transition: 'slide', // none/fade/slide/convex/concave/zoom
-    dependencies: [
-      { src: '../../resources/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: '../../resources/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '../../resources/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '../../resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: '../../resources/reveal.js/plugin/zoom-js/zoom.js', async: true },
-      { src: '../../resources/reveal.js/plugin/notes/notes.js', async: true }
-    ]
-  });
-</script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      dependencies: [
+        { src: '../../resources/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+        { src: '../../resources/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: '../../resources/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: '../../resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: '../../resources/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../../resources/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
 </body>
+
 </html>

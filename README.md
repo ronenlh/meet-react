@@ -1,5 +1,7 @@
 Introduction to ReactJS
 ==========
+Slides: [https://nabilnaffar.github.io/meet-react](https://nabilnaffar.github.io/meet-react)
+
 ## Course Overview: 
 This course is an introduction to ReactJS library by Facebook – aimed only to FE Developers with experience on other framework (for example: Angular) and with 0 experience in React.
 At the end of the course, you will have the tools to create your own ReactJS apps.

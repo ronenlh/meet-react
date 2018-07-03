@@ -1,1 +1,4 @@
-// examples goes here...
+// array flat
+
+// string matchAll
+

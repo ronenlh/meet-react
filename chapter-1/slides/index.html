@@ -58,6 +58,49 @@
         <h3>Meet React.js</h3>
       </section>
       <section>
+        <h3>Creating React component</h3>
+        <pre><code class="javascript" data-trim>
+React.createElement(
+  type,
+  [props],
+  [...children]
+)
+
+// example
+React.createElement('h1', {}, 'Hello React!');
+          </code></pre>
+      </section>
+      <section>
+        <h3>Render using ReactDOM</h3>
+        <pre><code class="javascript" data-trim>
+ReactDOM.render(element, container[, callback])
+
+// example
+var title = React.createElement('h1', {}, 'Hello React!');
+ReactDOM.render(title, document.getElementById('root'));
+        </code></pre>
+      </section>
+      <section>
+          <img style="display: inline-block; margin: 0;" class="reset-img" height="70px" src="../../resources/assets/jsx-logo.png">
+          <h3 style="display: inline-block;">JSX - The declarative way</h3>
+          <pre><code class="jsx" data-trim>
+// JSX syntax
+<type [...props]>[...children]</type>
+
+// Transpiled JS using React.createElement:
+React.createElement(
+  type,
+  [props],
+  [...children]
+)
+
+// example
+var title = (<h1>Hello React!</h1>);
+// Transpiles to:
+React.createElement('h1', {}, 'Hello React!');
+          </code></pre>
+        </section>
+      <section>
         <img class="reset-img" height="100px" src="../../resources/assets/react-ts.png">
         <h3>Meet React.ts</h3>
       </section>

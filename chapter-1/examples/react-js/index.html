@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React.js</title>
+</head>
+
+<body>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <div id="root"></div>
+    
+    <script>
+        var title = React.createElement('h1', {}, 'Hello React!');
+        ReactDOM.render(title, document.getElementById('root'));
+    </script>
+
+    <!-- <script>
+        var cell11 = React.createElement('td', {key: 11}, 'cell11');
+        var cell12 = React.createElement('td', {key: 12}, 'cell12');
+        var cell13 = React.createElement('td', {key: 13}, 'cell13');
+        var row1 = React.createElement('tr', {key: 1}, [cell11, cell12, cell13]);
+
+        var cell21 = React.createElement('td', {key: 21}, 'cell21');
+        var cell22 = React.createElement('td', {key: 22}, 'cell22');
+        var cell23 = React.createElement('td', {key: 23}, 'cell23');
+        var row2 = React.createElement('tr', {key: 2}, [cell21, cell22, cell23]);
+        
+        var tbody = React.createElement('tbody', {}, [row1, row2]);
+        var table = React.createElement('table', {style: {border: '1px solid'}}, tbody);
+
+        ReactDOM.render(table, document.getElementById('root'));
+    </script> -->
+</body>
+
+</html>

@@ -15,25 +15,29 @@
     <div id="root"></div>
     
     <script>
-        var title = React.createElement('h1', {}, 'Hello React!');
+        const title = React.createElement('h1', {}, 'Hello React!');
         ReactDOM.render(title, document.getElementById('root'));
     </script>
 
     <!-- <script>
-        var cell11 = React.createElement('td', {key: 11}, 'cell11');
-        var cell12 = React.createElement('td', {key: 12}, 'cell12');
-        var cell13 = React.createElement('td', {key: 13}, 'cell13');
-        var row1 = React.createElement('tr', {key: 1}, [cell11, cell12, cell13]);
+        const title = React.createElement('h1', {}, 'Hello React!');
 
-        var cell21 = React.createElement('td', {key: 21}, 'cell21');
-        var cell22 = React.createElement('td', {key: 22}, 'cell22');
-        var cell23 = React.createElement('td', {key: 23}, 'cell23');
-        var row2 = React.createElement('tr', {key: 2}, [cell21, cell22, cell23]);
+        const cell11 = React.createElement('td', {key: 11}, 'cell11');
+        const cell12 = React.createElement('td', {key: 12}, 'cell12');
+        const cell13 = React.createElement('td', {key: 13}, 'cell13');
+        const row1 = React.createElement('tr', {key: 1}, [cell11, cell12, cell13]);
+
+        const cell21 = React.createElement('td', {key: 21}, 'cell21');
+        const cell22 = React.createElement('td', {key: 22}, 'cell22');
+        const cell23 = React.createElement('td', {key: 23}, 'cell23');
+        const row2 = React.createElement('tr', {key: 2}, [cell21, cell22, cell23]);
         
-        var tbody = React.createElement('tbody', {}, [row1, row2]);
-        var table = React.createElement('table', {style: {border: '1px solid'}}, tbody);
+        const tbody = React.createElement('tbody', {}, [row1, row2]);
+        const table = React.createElement('table', {style: {border: '1px solid'}}, tbody);
 
-        ReactDOM.render(table, document.getElementById('root'));
+        const app = React.createElement('div', {}, [title, table]);
+
+        ReactDOM.render(app, document.getElementById('root'));
     </script> -->
 </body>
 

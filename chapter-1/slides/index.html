@@ -70,6 +70,25 @@
         </div>
       </section>
       <section>
+        <h3><img class="reset-img" style="margin: 0" width="100px" src="../../resources/assets/lego.png">Components</h3>
+      </section>
+      <section>
+        <h3>Native API</h3>
+        <pre><code class="language-javascript" data-trim>document.createElement(tagName[, options])
+
+// example
+document.body.onload = addElement;
+function addElement () {
+  const title = document.createElement("h1"); 
+  const content = document.createTextNode("Hello there!"); 
+  title.appendChild(content);  
+
+  const appRoot = document.getElementById("root"); 
+  appRoot.appendChild(title); 
+}
+          </code></pre>
+      </section>
+      <section>
         <img class="reset-img" height="100px" src="../../resources/assets/react_logo_wordmark.png">
         <h3>Meet React.js</h3>
       </section>

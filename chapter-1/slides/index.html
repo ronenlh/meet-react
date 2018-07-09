@@ -148,6 +148,10 @@ const title = (&lt;h1>Hello React!&lt;/h1>);
 React.createElement('h1', {}, 'Hello React!');
           </code></pre>
       </section>
+      <section>
+        <img class="reset-img" style="margin: 0" width="200px" src="../../resources/assets/communication.png">
+        <h3>Communicate Between Components</h3>
+    </section>
       <section data-transition="slide-in none-out">
           <h3>Component props</h3>
           <pre><code class="language-jsx" data-trim>
@@ -174,8 +178,55 @@ const Header = ({title, onClick}) =>
           <p style="font-size: 22px;">props are read-only!!!</p>
       </section>
       <section>
+          <img class="reset-img" src="../../resources/assets/parent-child.png">
+      </section>
+      <section>
         <img class="reset-img" height="100px" src="../../resources/assets/react-ts.png">
         <h3>Meet React.ts</h3>
+      </section>
+      <section>
+        <h3>Function component</h3>
+        <pre><code class="language-tsx" data-trim>
+const Header = ({title: string, onClick: () => void}) => 
+    (&lt;h1 onClick={onClick}>{title}&lt;/h1>);        
+        </code></pre>
+      </section>
+      <section>
+        <h3>Class component</h3>
+        <pre><code class="language-tsx" data-trim>import * as React from 'react';
+
+interface ComponentProps {
+  name: string;
+  onClick(): void;
+}
+
+class ComponentName extends React.Component&lt;ComponentProps>{
+  render() {
+      return (/* Component content */)
+  }
+}
+          </code></pre>
+      </section>
+      <section>
+          <h3>Starting a FE project</h3>
+          <div>
+            <span>package.json, 
+            tsconfig.json, 
+            tslint.json, 
+            webpack.config.js, 
+            webpack.config.prod.js, 
+            index.html, 
+            uglify.js, 
+            service-worker.js, 
+            jest.config.js... 🤯</span>
+          </div>
+      </section>
+      <section>
+          <h3>😌</h3>
+          <pre><code class="language-markup" data-trim>create-react-app my-app --scripts-version=react-scripts-ts</code></pre>
+      </section>
+      <section>
+          <h3>🛠 Try it</h3>
       </section>
     </div>
   </div>

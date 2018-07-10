@@ -7,7 +7,7 @@
     "object-literal-key-quotes": [true, "as-needed"],
     "interface-name": false,
     "no-empty-interface":false,
-    "no-console":false,
+    "no-console": true,
     "jsx-no-multiline-js":false,
     "no-any": true,
     "no-var-requires": false,

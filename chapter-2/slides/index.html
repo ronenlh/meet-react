@@ -38,19 +38,47 @@
         </i>
       </section>
       <section>
-          <img class="reset-img" height="60%" width="60%" src="../../resources/assets/components-split-before.png">
+          <img class="reset-img" height="60%" width="60%" src="../../resources/assets/components-split-animation.gif">
       </section>
       <section>
-          <img class="reset-img" height="60%" width="60%" src="../../resources/assets/components-split-after.png">
+        <h3>Components Types</h3>
       </section>
       <section>
-        <h3>Stateless Components</h3>
+          <h3>Constant Components</h3>
+          <pre><code class="language-jsx" data-trim>// Constant Component
+const App = (&lt;h1>Hello React!&lt;/h1>);</code></pre>
       </section>
       <section>
-        <h3>Statefull Components</h3>
+        <h3>Stateless Functional Components</h3>
+        <pre><code class="language-jsx" data-trim>interface AppProps {
+    name: string;
+}
+
+// Stateless Functional Component
+const App: React.SFC&lt;AppProps> = ({ name }) => 
+                                      (&lt;h1>Hello {name}!&lt;/h1>);</code></pre>
       </section>
       <section>
-        <h3>Components lifecycle</h3>
+        <h3>Statefull Class Components</h3>
+        <pre><code class="language-tsx" data-trim>interface ComponentProps {
+  name: string;
+  onClick(): void;
+}
+
+class ComponentName extends React.Component&lt;ComponentProps>{
+  render() {
+      return (&lt;h1>Hello {this.props.name}!&lt;/h1>)
+  }
+}
+          </code></pre>
+      </section>
+      <section>
+        <img class="reset-img" style="margin: 0" height="100px" src="../../resources/assets/internal-storage.png">
+        <h3>Component Internal State</h3>
+      </section>
+      <section>
+        <img class="reset-img" src="../../resources/assets/simba.jpg">
+        <h3>Components Lifecycle</h3>
       </section>
       <section>
         <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Introduction_to_Layout_in_Mozilla">How rendering works</a>

@@ -1,0 +1,18 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/****** Media queries
+***************************/
+
+/* For Tablets and larger screens
+****************/
+@media (min-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+}
+

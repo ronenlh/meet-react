@@ -3,11 +3,10 @@
 - node.js v10: [Download](https://nodejs.org/en/)
 - Chrome browser: [Download](https://www.google.com/chrome/)
 - VSCode: [Download](https://code.visualstudio.com/)
-- ConEmu (Windows users only, Optional): [Download](https://conemu.github.io/)
+- ConEmu (Windows users only): [Download](https://conemu.github.io/)
 
 
 # npm global installations
-- npx: run `npm i -g npx`
 - serve: run `npm i -g serve`
 - create-react-app: run `npm i -g create-react-app`
 
@@ -24,3 +23,4 @@
 - `npm install`
 - `npm start`
 - [Open app](http://localhost:3000)
+- You should see the following screen: ![solution-1-screenshot](resources/assets/solution-1-screenshot.png)

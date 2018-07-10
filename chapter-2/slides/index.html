@@ -32,7 +32,8 @@
     <div class="slides">
       <section>
         <a style="position: fixed; left: 20px; font-size: 30px" href="../../">◀</a>
-        <h3><img class="reset-img" style="margin: 0" width="100px" src="../../resources/assets/lego.png">Components</h3>
+        <img class="reset-img" style="margin: 0" width="100px" src="../../resources/assets/lego.png">
+        <h3>Components</h3>
         <i>
             "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation."
         </i>
@@ -41,7 +42,7 @@
           <img class="reset-img" height="60%" width="60%" src="../../resources/assets/components-split-animation.gif">
       </section>
       <section>
-        <h3>Components Types</h3>
+        <h3>🍕 Components Types</h3>
       </section>
       <section>
           <h3>Constant Components</h3>
@@ -65,16 +66,73 @@ const App: React.SFC&lt;AppProps> = ({ name }) =>
   onClick(): void;
 }
 
+// Statefull Class Component
 class ComponentName extends React.Component&lt;ComponentProps>{
   render() {
       return (&lt;h1>Hello {this.props.name}!&lt;/h1>)
   }
-}
-          </code></pre>
+}</code></pre>
       </section>
       <section>
         <img class="reset-img" style="margin: 0" height="100px" src="../../resources/assets/internal-storage.png">
         <h3>Component Internal State</h3>
+      </section>
+      <section>
+        <h3>this.state</h3>
+        <ul>
+          <li>Stores only <a>private</a> information</li>
+          <li><a>Not exposed</a> to other components</li>
+          <li>Is <a>read-only</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Define and initialize the state</h3>
+        <pre><code class="language-tsx" data-trim>class CounterState {
+  count: number = 0;
+}
+
+class CounterName extends React.Component&lt;CounterProps, CounterState>{
+  constructor(props: CounterProps) {
+    super(props);
+    this.state = new CounterState();
+  }
+
+  render() {
+      return (&lt;button>Count: {this.state.count}&lt;/button>)
+  }
+}</code></pre>
+      </section>
+      <section>
+          <h3>Changing component state</h3>
+          <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
+  constructor(props: CounterProps){/**/}
+  
+  increment() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+
+  render() {
+      return (&lt;button onClick={this.increment.bind(this)}>{this.state.count}&lt;/button>)
+  }
+}
+</code></pre>
+      </section>
+      <section>
+          <h3>State derived from previous state</h3>
+          <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
+  ...
+  increment() {
+    this.setState((prevState) => {
+      return {
+        count: prevState + 1
+      }
+    });
+  }
+  ...
+}
+</code></pre>
       </section>
       <section>
         <img class="reset-img" src="../../resources/assets/simba.jpg">

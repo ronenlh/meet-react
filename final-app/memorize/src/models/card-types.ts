@@ -1,10 +1,8 @@
+import { mapToAppCards, shuffle, double } from '../store/game.middlewares';
+import { compose } from '../utils/utils';
+
 export type CardType = '😃' | '😍' | '😂' | '🚀' | '🎉' | '🍻' | '🐌' | '🚧' | '🙄' | '😈' | '💩' | '🤖' | '🐰' | '🐨' | '🐸' | '🐵' | '🦄' | '🌈' | '🍌' | '🍕';
 
-export const CARDS: Array<{
-    type: CardType;
-    id: number;
-    isFlipped: boolean;
-}> = (['😃', '😍', '😂', '🚀', '🎉', '🍻', '🐌', '🚧', '🙄', '😈', '💩', '🤖', '🐰', '🐨', '🐸', '🐵', '🦄', '🌈', '🍌', '🍕'] as CardType[])
-.map((type, id) => ({
-    type, id, isFlipped: false
-}));
+const availableCards = (['😃', '🚀', '🎉', '🍻', '💩', '🐸', '🦄', '🌈', '🍌', '🍕'] as CardType[]);
+
+export const CARDS = compose(double, shuffle, mapToAppCards)(availableCards);

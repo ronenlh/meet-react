@@ -119,7 +119,7 @@ class CounterName extends React.Component&lt;CounterProps, CounterState>{
 }
 </code></pre>
       </section>
-      <section>
+      <section data-transition="slide-in none-out">
           <h3>State derived from previous state</h3>
           <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
   ...
@@ -134,9 +134,66 @@ class CounterName extends React.Component&lt;CounterProps, CounterState>{
 }
 </code></pre>
       </section>
+      <section data-transition="none-in slide-out">
+          <h3>State derived from previous state</h3>
+          <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
+  ...
+  increment() {
+    this.setState((prevState) => ({
+        count: prevState + 1
+    }));
+  }
+  ...
+}
+
+
+</code></pre>
+      </section>
       <section>
         <img class="reset-img" src="../../resources/assets/simba.jpg">
         <h3>Components Lifecycle</h3>
+      </section>
+      <section data-transition="slide-in none-out">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <div><img class="reset-img" width="200px" height="200px" src="../../resources/assets/lifecycle-born.png"><h5>Mount</h5></div>
+          <div style="width: 200px; height: 200px; background: transparent;"></div>
+          <div style="width: 200px; height: 200px; background: transparent;"></div>
+        </div>
+      </section>
+      <section data-transition="none-in none-out">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <div><img class="reset-img" width="200px" height="200px" src="../../resources/assets/lifecycle-born.png"><h5>Mount</h5></div>
+          <div><img class="reset-img" width="200px" height="200px" src="../../resources/assets/lifecycle-update.png"><h5>Update</h5></div>
+          <div style="width: 200px; height: 200px; background: transparent;"></div>
+        </div>
+      </section>
+      <section data-transition="none-in slide-out">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <div><img class="reset-img" width="200px" height="200px" src="../../resources/assets/lifecycle-born.png"><h5>Mount</h5></div>
+          <div><img class="reset-img" width="200px" height="200px" src="../../resources/assets/lifecycle-update.png"><h5>Update</h5></div>
+          <div><img class="reset-img" width="200px" height="200px" src="../../resources/assets/lifecycle-death.png"><h5>Unmount</h5></div>
+        </div>
+      </section>
+      <section>
+        <img class="reset-img" src="../../resources/assets/component-lifecycle.jpeg">
+      </section>
+      <section>
+        <div style="font-size: 30px;">
+<pre><code class="language-typescript" data-trim>class Component&lt;P, S> {
+    constructor(props: Readonly&lt;P>): void {/**/}
+    static getDerivedStateFromProps?: (nextProps: Readonly&lt;P>, prevState: S) => Partial&lt;S> | null {/**/}
+    
+    shouldComponentUpdate?(nextProps: Readonly&lt;P>, nextState: Readonly&lt;S>, nextContext: any): boolean {/**/}
+    
+    render(): ReactNode {/**/}
+    getSnapshotBeforeUpdate?(prevProps: Readonly&lt;P>, prevState: Readonly&lt;S>): SS | null {/**/}
+    
+    componentDidMount?(): void {/**/}
+    componentDidUpdate?(prevProps: Readonly&lt;P>, prevState: Readonly&lt;S>, snapshot?: SS): void {/**/}
+    componentWillUnmount?(): void {/**/}
+}
+</code></pre>
+</div>
       </section>
       <section>
         <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Introduction_to_Layout_in_Mozilla">How rendering works</a>

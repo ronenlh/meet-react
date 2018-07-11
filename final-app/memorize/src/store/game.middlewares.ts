@@ -1,8 +1,6 @@
 import { CardType } from '../models/card-types';
 
-export function double<T>(array: T[]): T[] {
-    return array.reduce((acc, cur) => acc.concat([cur, cur]), [] as T[]);
-}
+export const double = <T>(arr: T[]): T[] => [...arr, ...arr];
 
 export function shuffle<T>(array: T[]): T[] {
     let currentIndex = array.length;

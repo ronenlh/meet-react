@@ -3,11 +3,10 @@ import * as ReactDOM from 'react-dom';
 
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import { Deck } from './components/deck/deck';
-import { CARDS } from './models/card-types';
+import { GameBoard } from './components/game-board/game-board';
 
 ReactDOM.render(
-  <Deck cards={CARDS} />,
+  <GameBoard />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

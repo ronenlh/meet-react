@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "react": "npx tsc react.tsx --jsx react"
+    }
+}

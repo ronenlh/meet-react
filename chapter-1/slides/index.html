@@ -111,8 +111,8 @@ React.createElement('h1', {}, 'Hello React!');
 ReactDOM.render(element, container[, callback])
 
 // example
-const title = React.createElement('h1', {}, 'Hello React!');
-ReactDOM.render(title, document.getElementById('root'));
+const Title = React.createElement('h1', {}, 'Hello React!');
+ReactDOM.render(Title, document.getElementById('root'));
         </code></pre>
       </section>
       <section>
@@ -142,12 +142,32 @@ React.createElement(
           <pre><code class="language-jsx" data-trim>
 // example
 
-const title = (&lt;h1>Hello React!&lt;/h1>);
+const Title = (&lt;h1>Hello React!&lt;/h1>);
 
 // Transpiles to:
-React.createElement('h1', {}, 'Hello React!');
+const Title = React.createElement('h1', {}, 'Hello React!');
           </code></pre>
       </section>
+      <section>
+        <h3>Components tree</h3>
+        <img class="reset-img" src="../../resources/assets/components-intro.png">
+      </section>
+      <section>
+        <h3>Components composition</h3>
+           <pre><code class="language-jsx" data-trim>const ComponentA = (props) => (&lt;div>Content is: {props.children}&lt;/div>);
+const Title = () => (&lt;h1>Hello React!&lt;/h1>);
+
+// Usage:
+&lt;ComponentA>
+  &lt;Title />
+&lt;/ComponentA>
+
+// Result:
+&lt;div>
+    Content is: &lt;h1>Hello React!&lt;/h1>
+&lt;/div>
+          </code></pre>       
+    </section>
       <section>
         <img class="reset-img" style="margin: 0" width="200px" src="../../resources/assets/communication.png">
         <h3>Communicate Between Components</h3>

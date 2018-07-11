@@ -29,8 +29,9 @@
 ****************/
 @media (min-width: 768px) {
 	.deck {
-		width: 660px;
-		height: 680px;
+		width: 720px;
+		/* width: 660px;
+		height: 680px; */
 	}
 }
 

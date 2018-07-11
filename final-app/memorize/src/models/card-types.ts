@@ -1,4 +1,4 @@
-import { mapToAppCards, shuffle, double } from '../store/game.middlewares';
+import { mapToAppCards, shuffle, double } from '../store/game/middlewares';
 
 export type CardType = '😃' | '😍' | '😂' | '🚀' | '🎉' | '🍻' | '🐌' | '🚧' | '🙄' | '😈' | '💩' | '🤖' | '🐰' | '🐨' | '🐸' | '🐵' | '🦄' | '🌈' | '🍌' | '🍕';
 

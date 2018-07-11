@@ -4,6 +4,6 @@ export interface DeckProps {
     cards: Array<{
         type: CardType;
         id: number;
-        isFlipped: boolean;
+        isOpen: boolean;
     }>;
 }

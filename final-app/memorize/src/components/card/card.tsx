@@ -2,16 +2,16 @@ import * as React from 'react';
 import { CardProps } from './card.props';
 import './card.css';
 
-export const Card = ({type, onClick, isFlipped}: CardProps) =>
-                            (<i className={getClasses(true, false)} onClick={() => onClick()}>{type}</i>);
+export const Card = ({type, onClick, isOpen, isMatched}: CardProps) =>
+                            (<i className={getClasses(isOpen, isMatched)} onClick={() => onClick()}>{type}</i>);
 
-function getClasses(isFlipped: boolean, isMatched: boolean) {
+function getClasses(isOpen: boolean, isMatched: boolean) {
     let className = 'card';
-    if (isFlipped) {
-        className += ' show';
+    if (isOpen) {
+        className += ' open show disabled';
     }
     if (isMatched) {
-        className += ' disabeld';
+        className += ' match disabled';
     }
     return className;
 }

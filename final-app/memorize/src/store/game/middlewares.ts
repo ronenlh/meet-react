@@ -1,4 +1,4 @@
-import { CardType } from '../models/card-types';
+import { CardType } from '../../models/card-types';
 
 export const double = <T>(arr: T[]): T[] => [...arr, ...arr];
 
@@ -20,9 +20,9 @@ export function shuffle<T>(array: T[]): T[] {
 export function mapToAppCards(cards: CardType[]): Array<{
     type: CardType;
     id: number;
-    isFlipped: boolean;
+    isOpen: boolean;
 }> {
     return cards.map((type, id) => ({
-        type, id, isFlipped: false
+        type, id, isOpen: false
     }));
 }

@@ -150,15 +150,77 @@ React.createElement(
           <pre><code class="language-jsx" data-trim>
 // example
 
-const Title = (&lt;h1>Hello React!&lt;/h1>);
+const Title = () => (&lt;h1>Hello React!&lt;/h1>);
 
 // Transpiles to:
-const Title = React.createElement('h1', {}, 'Hello React!');
+const Title = () => React.createElement('h1', {}, 'Hello React!');
           </code></pre>
       </section>
       <section>
         <h3>Components tree</h3>
         <img class="reset-img" src="../../resources/assets/components-intro.png">
+      </section>
+      <section>
+        <pre><code class="language-jsx" data-trim>// example
+const Title = () => (&lt;h1>Hello React!&lt;/h1>);
+const Container = () => (&lt;div>
+                            Parent
+                            &lt;Title />
+                         &lt;/div>);
+
+// Result:
+&lt;div>
+  Parent
+  &lt;h1>Hello React!&lt;/h1>
+&lt;/div>
+        </code></pre>
+    </section>
+      <section>
+        <img class="reset-img" style="margin: 0" width="200px" src="../../resources/assets/communication.png">
+        <h3>Communicate Between Components</h3>
+    </section>
+      <section data-transition="slide-in none-out">
+          <h3>Component props</h3>
+          <pre><code class="language-jsx" data-trim>
+const Header = (props) => (&lt;h1>{props.title}&lt;/h1>);
+
+// Usage:
+&lt;Header title="Hello React!" />
+
+// Result:
+&lt;h1>Hello React!&lt;/h1>
+          </code></pre>
+          <br><br>
+          <p style="font-size: 22px;">props are read-only!!!</p>
+      </section>
+      <section data-transition="none-in slide-out">
+          <h3>Component props</h3>
+          <pre><code class="language-jsx" data-trim>
+const Header = ({title}) => (&lt;h1>{title}&lt;/h1>);
+
+// Usage:
+&lt;Header title="Hello React!" />
+
+// Result:
+&lt;h1>Hello React!&lt;/h1>
+          </code></pre>
+          <br><br>
+          <p style="font-size: 22px;">props are read-only!!!</p>
+      </section>
+      <section>
+          <h3>Component events</h3>
+          <pre><code class="language-jsx" data-trim>
+const Header = ({title, onPress}) => 
+                    (&lt;h1 onClick={onPress}>{title}&lt;/h1>);
+
+// Usage:
+&lt;Header onPress={() => alert('clicked!')} title="Press here" />
+          </code></pre>
+          <br><br>
+          <p style="font-size: 22px;">props are read-only!!!</p>
+      </section>
+      <section>
+          <img class="reset-img" src="../../resources/assets/parent-child.png">
       </section>
       <section>
         <h3>Components composition</h3>
@@ -177,60 +239,38 @@ const Title = () => (&lt;h1>Hello React!&lt;/h1>);
           </code></pre>       
     </section>
       <section>
-        <img class="reset-img" style="margin: 0" width="200px" src="../../resources/assets/communication.png">
-        <h3>Communicate Between Components</h3>
-    </section>
-      <section data-transition="slide-in none-out">
-          <h3>Component props</h3>
-          <pre><code class="language-jsx" data-trim>
-const Header = (props) => (&lt;h1>{props.title}&lt;/h1>);
-          </code></pre>
-          <br><br>
-          <p style="font-size: 22px;">props are read-only!!!</p>
-      </section>
-      <section data-transition="none-in slide-out">
-          <h3>Component props</h3>
-          <pre><code class="language-jsx" data-trim>
-const Header = ({title}) => (&lt;h1>{title}&lt;/h1>);
-          </code></pre>
-          <br><br>
-          <p style="font-size: 22px;">props are read-only!!!</p>
-      </section>
-      <section>
-          <h3>Component events</h3>
-          <pre><code class="language-jsx" data-trim>
-const Header = ({title, onClick}) => 
-                    (&lt;h1 onClick={onClick}>{title}&lt;/h1>);
-          </code></pre>
-          <br><br>
-          <p style="font-size: 22px;">props are read-only!!!</p>
-      </section>
-      <section>
-          <img class="reset-img" src="../../resources/assets/parent-child.png">
-      </section>
-      <section>
         <img class="reset-img" height="100px" src="../../resources/assets/react-ts.png">
         <h3>Meet React.ts</h3>
       </section>
       <section>
         <h3>Function component</h3>
-        <pre><code class="language-tsx" data-trim>
-const Header = ({title: string, onClick: () => void}) => 
-    (&lt;h1 onClick={onClick}>{title}&lt;/h1>);        
+        <pre><code class="language-tsx" data-trim>import * as React from 'react';
+
+interface HeaderProps {
+  title: string; 
+  onClick: () => void;
+}
+
+const Header: React.SFC&lt;HeaderProps> = ({title, onClick}) => 
+                          (&lt;h1 onClick={onClick}>{title}&lt;/h1>);      
+                          
+                          
+
         </code></pre>
       </section>
       <section>
         <h3>Class component</h3>
         <pre><code class="language-tsx" data-trim>import * as React from 'react';
 
-interface ComponentProps {
-  name: string;
-  onClick(): void;
+interface HeaderProps {
+  title: string; 
+  onClick: () => void;
 }
 
-class ComponentName extends React.Component&lt;ComponentProps>{
+class Header extends React.Component&lt;HeaderProps>{
   render() {
-      return (/* Component content */)
+      return 
+      (&lt;h1 onClick={this.props.onClick}>{this.props.title}&lt;/h1>); 
   }
 }
           </code></pre>

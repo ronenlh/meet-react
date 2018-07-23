@@ -37,7 +37,74 @@
       <section>
           <i>“Photography is truth. The cinema is truth 24 times per second.”</i>
           <div><i style="font-size: 18px">Jean-Luc Godard</i></div>
-      </section>  
+      </section>
+      <section>
+        <h3>Unidirectional data flow</h3>
+        <img class="reset-img" src="../../resources/assets/redux-flow.png">
+      </section>
+      <section>
+        <h3>View</h3>
+        <div>React components tree</div>
+      </section>
+      <section>
+        <h3>Action</h3>
+        <div>Unified way to communicate</div>
+        <pre><code class="language-jsx" data-trim>{
+  type: '@GAME/START_GAME'
+}</code></pre>
+        <pre><code class="language-jsx" data-trim>{
+  type: '@GAME/SELECT_CARD',
+  payload: { id: 32 }
+}</code></pre>
+      </section>
+      <section>
+        <h3>Action creator</h3>
+        <div>Simple functions that create actions</div>
+<pre><code class="language-jsx" data-trim>export const selectCard = (id: number) => ({
+    type: SELECT_CARD,
+    payload: { id }
+});</code></pre>
+      </section>
+      <section>
+        <h3>Reducers</h3>
+        <div>The only way to modify the state</div>
+        <pre><code class="language-jsx" data-trim>const gameReducer: Reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case SELECT_CARD:
+            return {
+                ...state,
+                selectedCard: action.payload,
+            };
+        default:
+            return state;
+    }
+};</code></pre>
+<i style="font-size: 30px">State is immutable!</i>
+      </section>
+      <section>
+        <h3>Store</h3>
+        <div>Holds the single application state</div>
+        <div>Single source of truth</div>
+        <div>Read-only</div>
+        <pre><code class="language-jsx" data-trim>export const store = createStore(gameReducer);</code></pre>
+      </section>
+      <section>
+        <h3>Middlewares</h3>
+        <div>Action in - Action out</div>
+        <div>Buisness logic</div>
+        <div>Side effects (e.g. API calls)</div>
+        <img class="reset-img" src="../../resources/assets/redux-middlewares.png">
+      </section>
+      <section>
+        <h3>Middlewares</h3>
+          <pre><code class="language-jsx" data-trim>const startGameMW: Middleware = (store) => (next) => (action) => {
+  if (action.type === START_GAME) {
+    store.dispatch(actions.shuffleCards());
+  } else {
+    next(action);
+  }
+}</code></pre>
+      </section>
       <section>
         <h3>Code example</h3>
         <pre><code class="language-jsx" data-trim></code></pre>

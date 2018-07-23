@@ -187,11 +187,59 @@ class CounterName extends React.Component&lt;CounterProps, CounterState>{
 </div>
       </section>
       <section>
-        <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Introduction_to_Layout_in_Mozilla" target="_blank">How browser rendering works</a>
+          <h3>🎨 Browser rendering</h3>
       </section>
       <section>
-        <h3>Virtual DOM</h3>
+        <div style="display: flex; justify-content: space-between">
+        <div>
+          <h5>Webkit (Safari)</h5>
+          <img class="reset-img" src="../../resources/assets/flow-webkit.png" />
+        </div>
+        <div>
+          <h5>Gecko (Firefox)</h5>
+          <img class="reset-img" src="../../resources/assets/flow-gecko.png" />
+        </div>
+      </div>
+      </section>
+      <section data-transition="slide-in none-out">
+        <h3>DOM Tree</h3>
+        <img class="reset-img" src="../../resources/assets/flow-webkit-01.png"/>
+      </section>
+      <section data-transition="none-in none-out">
+        <h3>Render Tree</h3>
+        <img class="reset-img" src="../../resources/assets/flow-webkit-02.png"/>
+      </section>
+      <section data-transition="none-in none-out">
+        <h3>Layout</h3>
+        <img class="reset-img" src="../../resources/assets/flow-webkit-03.png"/>
+      </section>
+      <section data-transition="none-in slide-out">
+        <h3>Paint</h3>
+        <img class="reset-img" src="../../resources/assets/flow-webkit.png"/>
+      </section>
+      <section>
+        <ul>
+          <li style="margin: 40px 0">Each DOM change goes through all steps starting from the creation of the DOM tree to painting.</li>
+          <li style="margin: 40px 0">Each manipulation can trigger layout changes, tree modifications and rendering.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>⚡️ React Virtual DOM</h3>
+      </section>
+      <section>
         <img class="reset-img" height="60%" width="60%" src="../../resources/assets/virtual-dom.png">
+        <ul>
+          <li>Groups multiple DOM manipulations</li>
+          <li>Keeps track of changed nodes</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Additional resources</h3>
+        <ul>
+          <li><a href="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/">How browsers work</a></li>
+          <li><a href="https://hashnode.com/post/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-cisczhfj41bmssp53mvfwmgrq">Why Virtual DOM</a></li>
+          <li><a href="https://reactjs.org/docs/reconciliation.html">React reconciliation</a></li>
+        </ul>
       </section>
       <section>
           <h3>🛠 Try it</h3>

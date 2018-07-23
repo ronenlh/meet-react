@@ -40,6 +40,13 @@
           </i>
       </section>
       <section>
+        <div style="display: flex; flex-direction: column; width: 500px; margin: auto;">
+          <div style="display: flex; justify-content: space-between; margin: 10px 0 10px 0;">Reusable <img height="50px" style="margin: 0" class="reset-img" src="../../resources/assets/components_reusable.png" /></div>
+          <div style="display: flex; justify-content: space-between; margin: 10px 0 10px 0;">Isolated <img height="50px" style="margin: 0" class="reset-img" src="../../resources/assets/components_isolated.png" /></div>
+          <div style="display: flex; justify-content: space-between; margin: 10px 0 10px 0;">Composable <img height="50px" style="margin: 0" class="reset-img" src="../../resources/assets/components_composable.png" /></div>
+        </div>
+      </section>
+      <section>
         <h3>Native API</h3>
         <pre><code class="language-javascript" data-trim>document.createElement(tagName[, options])
 
@@ -254,6 +261,16 @@ class Header extends React.Component&lt;HeaderProps>{
       </section>
       <section>
           <h3>🛠 Try it</h3>
+          <div style="text-align: left; font-size: 38px;">
+            1. Generate a new project using <a href="https://github.com/wmonk/create-react-app-typescript">create-react-app</a>.<br>
+            2. Create a Card component which receives: <br>
+            <div style="margin-left: 40px">
+              - <b>value</b>: value to display.<br>
+              - <b>disabled</b>: boolean to enable/disable the card.<br>
+              - <b>onPress</b>: callback function that will be called when card is clicked.<br>
+            </div>
+            3. Create a Card-Board component which displays 20 cards <br>
+          </div>
       </section>
     </div>
   </div>

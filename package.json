@@ -6,11 +6,13 @@
   },
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7"
   },
   "devDependencies": {
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.4",
     "react-scripts-ts": "^2.16.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"

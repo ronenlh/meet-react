@@ -1,5 +1,8 @@
-// import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import { gameReducer } from './game';
 
-// const store = createStore()
+const store = createStore(combineReducers({
+    game: gameReducer
+}));
 
-// export { store };
+export { store };

@@ -13,7 +13,7 @@ interface DeckState {
     }>;
     count: number;
 }
-// --------------------
+
 export class Deck extends React.Component<DeckProps, DeckState> {
     constructor(props: DeckProps) {
         super(props);
@@ -26,7 +26,14 @@ export class Deck extends React.Component<DeckProps, DeckState> {
             <div className="deck">
                 {this.state.cards
                             .map(({id, type, isOpen}) =>
-                                    (<Card isOpen={isOpen} isMatched={false} onClick={() => this.flip(id)} key={id} type={type}/>))}
+                                (<Card
+                                    isOpen={isOpen}
+                                    isMatched={false}
+                                    onClick={() => this.flip(id)}
+                                    key={id}
+                                    type={type}
+                                    disabled={false}
+                                />))}
             </div>
         );
     }

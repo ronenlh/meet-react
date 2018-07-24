@@ -242,6 +242,22 @@ class Header extends React.Component&lt;HeaderProps>{
           </code></pre>
       </section>
       <section>
+        <h3>Rendering lists in jsx</h3>
+        <pre><code class="language-tsx" data-trim>const items = [{id: 32, name: 'First'},{id: 43, name: 'Second'}];
+
+const List: React.SCF = () => 
+            (&lt;ul>
+                {items.map(item => 
+                      (&lt;li key={item.id}>{item.name}&lt;/li>))
+                }
+            &lt;/ul>);</code>
+<code class="language-html">// Result
+&lt;ul>
+  &lt;li>First&lt;/li>
+  &lt;li>Second&lt;/li>
+&lt;/ul></code></pre>
+      </section>
+      <section>
           <h3>Starting a FE project</h3>
           <div>
             <span>package.json, 

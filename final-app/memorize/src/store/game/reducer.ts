@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import { initialState, GameState } from './initial-state';
-import { SET_CARDS, SET_FIRST_CARD, SET_MATCHED_CARDS, SET_SECOND_CARD, STEPS_INCREMENT, STEPS_RESET } from './types';
+import { SET_CARDS, SET_FIRST_CARD, SET_MATCHED_CARDS, SET_SECOND_CARD, STEPS_INCREMENT, STEPS_RESET, SET_GAME_ENDED } from './types';
 
 export const gameReducer: Reducer = (state: GameState = initialState, action) => {
     switch (action.type) {
@@ -37,6 +37,11 @@ export const gameReducer: Reducer = (state: GameState = initialState, action) =>
             return {
                 ...state,
                 moves: 0,
+            };
+        case SET_GAME_ENDED:
+            return {
+                ...state,
+                gameFinished: action.payload,
             };
         default:
             return state;

@@ -1,6 +1,6 @@
 import { Action, ActionCreator } from 'redux';
 import { CardType } from '../../models/card-types';
-import { SHUFFLE_CARDS, SET_CARDS, CARDS_MATCH, SET_MATCHED_CARDS, GAME_ENDED, STEPS_RESET, STEPS_INCREMENT, START_GAME, SELECT_CARD, SET_FIRST_CARD, SET_SECOND_CARD } from './types';
+import { SHUFFLE_CARDS, SET_CARDS, CARDS_MATCH, SET_MATCHED_CARDS, SET_GAME_ENDED, STEPS_RESET, STEPS_INCREMENT, START_GAME, SELECT_CARD, SET_FIRST_CARD, SET_SECOND_CARD } from './types';
 
 // Game Actions
 // init
@@ -42,8 +42,9 @@ export const setMatchedCards: ActionCreator<Action> = (id1: number, id2: number)
     payload: [id1, id2]
 });
 
-export const gameEnded: ActionCreator<Action> = () => ({
-    type: GAME_ENDED
+export const setGameEnded: ActionCreator<Action> = (isEnded: boolean) => ({
+    type: SET_GAME_ENDED,
+    payload: isEnded
 });
 
 // Count steps

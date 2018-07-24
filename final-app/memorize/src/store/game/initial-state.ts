@@ -9,6 +9,7 @@ export interface GameState {
     card1: number | null;
     card2: number | null;
     moves: number;
+    gameFinished: boolean;
 }
 
 export const initialState: GameState = {
@@ -98,4 +99,5 @@ export const initialState: GameState = {
     card1: null,
     card2: null,
     moves: 0,
+    gameFinished: false,
 };

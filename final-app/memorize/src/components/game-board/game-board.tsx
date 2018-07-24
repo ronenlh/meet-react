@@ -7,6 +7,7 @@ import { ConnectedDeck } from '../deck/deck';
 import { ConnectedScorePanel } from '../score-panel/score-panel';
 import './game-board.css';
 import { GameState } from '../../store/game/initial-state';
+import { Congrats } from '../congrats/congrats';
 
 type GameBoardProps = PropsFromState & PropsFromDispatch;
 class GameBoard extends React.Component<GameBoardProps> {
@@ -17,20 +18,21 @@ class GameBoard extends React.Component<GameBoardProps> {
     render() {
         return (
             <div className="game-board">
-                {this.getEndedCongrats()}
                 <ConnectedScorePanel />
-                <div className="container">
+                <div className={this.containerDockClasses}>
                     <ConnectedDeck />
                 </div>
+                {this.getEndedCongrats()}
             </div>
         );
     }
 
     private getEndedCongrats() {
-        if (this.props.gameFinished) {
-           return null;
-        }
-        return (<div className="congrats">🎉🎉🎉</div>);
+        return this.props.gameFinished ? <Congrats /> : null;
+    }
+
+    private get containerDockClasses() {
+        return this.props.gameFinished ? 'container game-ended' : 'container';
     }
 }
 

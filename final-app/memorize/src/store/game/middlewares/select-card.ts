@@ -25,7 +25,11 @@ export const selectCardMiddleware: Middleware = (store: Store<GameState>) => (ne
     const isMatched = firstCardType && secondCardType && firstCardType.value === secondCardType.value;
     setTimeout(() => {
         if (isMatched) {
-            store.dispatch(actions.setMatchedCards(firstCardId, secondCardId));
+            store.dispatch(actions.setMatchedCards({
+                ...store.getState().matchedCards,
+                [firstCardId]: true,
+                [secondCardId]: true,
+            }));
 
             if ((Object.keys(store.getState().matchedCards).length) === store.getState().cards.length) {
                 store.dispatch(actions.setGameEnded(true));

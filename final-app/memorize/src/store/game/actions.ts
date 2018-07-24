@@ -1,6 +1,7 @@
 import { Action, ActionCreator } from 'redux';
 import { CardType } from '../../models/card-types';
 import { SHUFFLE_CARDS, SET_CARDS, CARDS_MATCH, SET_MATCHED_CARDS, SET_GAME_ENDED, STEPS_RESET, STEPS_INCREMENT, START_GAME, SELECT_CARD, SET_FIRST_CARD, SET_SECOND_CARD } from './types';
+import { GameState } from './initial-state';
 
 // Game Actions
 // init
@@ -37,9 +38,9 @@ export const cardsMatch: ActionCreator<Action> = () => ({
     type: CARDS_MATCH
 });
 
-export const setMatchedCards: ActionCreator<Action> = (id1: number, id2: number) => ({
+export const setMatchedCards: ActionCreator<Action> = (matchedCards: GameState['matchedCards']) => ({
     type: SET_MATCHED_CARDS,
-    payload: [id1, id2]
+    payload: matchedCards
 });
 
 export const setGameEnded: ActionCreator<Action> = (isEnded: boolean) => ({

@@ -22,11 +22,7 @@ export const gameReducer: Reducer = (state: GameState = initialState, action) =>
         case SET_MATCHED_CARDS:
             return {
                 ...state,
-                matchedCards: {
-                    ...state.matchedCards,
-                    [action.payload[0]]: true,
-                    [action.payload[1]]: true,
-                },
+                matchedCards: action.payload,
             };
         case STEPS_INCREMENT:
             return {

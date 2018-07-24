@@ -1,6 +1,6 @@
 import { Action, ActionCreator } from 'redux';
 import { CardType } from '../../models/card-types';
-import { SHUFFLE_CARDS, SET_CARDS, PICK_FIRST_CARD, PICK_SECOND_CARD, CARDS_MATCH, SET_MATCHED_CARDS, CARDS_NOT_MATCH, GAME_ENDED, STEPS_RESET, STEPS_INCREMENT, TIMER_RESET, TIMER_START, TIMER_INCREMENT, TIMER_STOP, START_GAME } from './types';
+import { SHUFFLE_CARDS, SET_CARDS, CARDS_MATCH, SET_MATCHED_CARDS, GAME_ENDED, STEPS_RESET, STEPS_INCREMENT, START_GAME, SELECT_CARD, SET_FIRST_CARD, SET_SECOND_CARD } from './types';
 
 // Game Actions
 // init
@@ -12,19 +12,24 @@ export const shuffleCards: ActionCreator<Action> = () => ({
     type: SHUFFLE_CARDS
 });
 
-export const setCards: ActionCreator<Action<string>> = (shuffledCards: {[id: number]: CardType}) => ({
+export const setCards: ActionCreator<Action<string>> = (cards: {[id: number]: CardType}) => ({
     type: SET_CARDS,
-    payload: {shuffledCards}
+    payload: cards
 });
 
 // moves
-export const pickFirstCard: ActionCreator<Action> = (id: number | null) => ({
-    type: PICK_FIRST_CARD,
+export const selectCard: ActionCreator<Action> = (id: number) => ({
+    type: SELECT_CARD,
     payload: { id }
 });
 
-export const pickSecondCard: ActionCreator<Action> = (id: number | null) => ({
-    type: PICK_SECOND_CARD,
+export const setFirstCard: ActionCreator<Action> = (id: number) => ({
+    type: SET_FIRST_CARD,
+    payload: { id }
+});
+
+export const setSecondCard: ActionCreator<Action> = (id: number) => ({
+    type: SET_SECOND_CARD,
     payload: { id }
 });
 
@@ -34,14 +39,7 @@ export const cardsMatch: ActionCreator<Action> = () => ({
 
 export const setMatchedCards: ActionCreator<Action> = (id1: number, id2: number) => ({
     type: SET_MATCHED_CARDS,
-    payload: {
-        card1: id1,
-        card2: id2,
-    }
-});
-
-export const cardsNotMatch: ActionCreator<Action> = () => ({
-    type: CARDS_NOT_MATCH
+    payload: [id1, id2]
 });
 
 export const gameEnded: ActionCreator<Action> = () => ({
@@ -55,20 +53,4 @@ export const resetSteps: ActionCreator<Action> = () => ({
 
 export const incrementSteps: ActionCreator<Action> = () => ({
     type: STEPS_INCREMENT
-});
-
-// Count time
-export const resetTimer: ActionCreator<Action> = () => ({
-    type: TIMER_RESET
-});
-export const startTimer: ActionCreator<Action> = () => ({
-    type: TIMER_START
-});
-
-export const incrementTimer: ActionCreator<Action> = () => ({
-    type: TIMER_INCREMENT
-});
-
-export const stopTimer: ActionCreator<Action> = () => ({
-    type: TIMER_STOP
 });

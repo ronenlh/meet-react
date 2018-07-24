@@ -1,16 +1,43 @@
 import { Reducer } from 'redux';
-import { initialState } from './initial-state';
-// import { SET_CARDS, SET_FIRST_CARD, SET_SECOND_CARD, SET_MATCHED_CARDS, SET_STEPS, SET_TIMER } from './types';
+import { initialState, GameState } from './initial-state';
+import { SET_CARDS, SET_FIRST_CARD, SET_MATCHED_CARDS, SET_SECOND_CARD, STEPS_INCREMENT, STEPS_RESET } from './types';
 
-export const gameReducer: Reducer = (state = initialState, action) => {
+export const gameReducer: Reducer = (state: GameState = initialState, action) => {
     switch (action.type) {
-        // case SET_CARDS:
-        // case SET_FIRST_CARD:
-        // case SET_SECOND_CARD:
-        // case SET_MATCHED_CARDS:
-        // case SET_STEPS:
-        // case SET_TIMER:
-
+        case SET_CARDS:
+            return {
+                ...state,
+                cards: action.payload,
+            };
+        case SET_FIRST_CARD:
+            return {
+                ...state,
+                card1: action.payload.id,
+            };
+        case SET_SECOND_CARD:
+            return {
+                ...state,
+                card2: action.payload.id,
+            };
+        case SET_MATCHED_CARDS:
+            return {
+                ...state,
+                matchedCards: {
+                    ...state.matchedCards,
+                    [action.payload[0]]: true,
+                    [action.payload[1]]: true,
+                },
+            };
+        case STEPS_INCREMENT:
+            return {
+                ...state,
+                moves: state.moves + 1,
+            };
+        case STEPS_RESET:
+            return {
+                ...state,
+                moves: 0,
+            };
         default:
             return state;
     }

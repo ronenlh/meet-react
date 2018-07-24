@@ -3,10 +3,10 @@ import * as ReactDOM from 'react-dom';
 
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import { GameBoard } from './components/game-board/game-board';
+import { App } from './pages/app';
 
 ReactDOM.render(
-  <GameBoard />,
+  <App />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

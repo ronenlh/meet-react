@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { GameState } from '../../store/game/initial-state';
+import { GameState } from '../../../store/game/initial-state';
 
 type Props = PropsFromState;
 const ScorePanel: React.SFC<Props> = ({moves}) => (

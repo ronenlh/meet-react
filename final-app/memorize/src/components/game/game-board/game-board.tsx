@@ -2,12 +2,13 @@
 import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../store/game/actions';
+import * as actions from '../../../store/game/actions';
 import { ConnectedDeck } from '../deck/deck';
 import { ConnectedScorePanel } from '../score-panel/score-panel';
 import './game-board.css';
-import { GameState } from '../../store/game/initial-state';
+import { GameState } from '../../../store/game/initial-state';
 import { Congrats } from '../congrats/congrats';
+import { Logo } from '../../logo/logo';
 
 type GameBoardProps = PropsFromState & PropsFromDispatch;
 class GameBoard extends React.Component<GameBoardProps> {
@@ -18,7 +19,10 @@ class GameBoard extends React.Component<GameBoardProps> {
     render() {
         return (
             <div className="game-board">
-                <ConnectedScorePanel />
+                <div className="header">
+                    <Logo size="small"/>
+                    <ConnectedScorePanel />
+                </div>
                 <div className={this.containerDockClasses}>
                     <ConnectedDeck />
                 </div>

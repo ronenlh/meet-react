@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../store/game/actions';
+import * as actions from '../../../store/game/actions';
+import { GameState } from '../../../store/game/initial-state';
 import './deck.css';
 import { Card } from '../card/card';
-import { GameState } from '../../store/game/initial-state';
 
 type DeckProps = PropsFromState & PropsFromDispatch;
 export class Deck extends React.Component<DeckProps> {

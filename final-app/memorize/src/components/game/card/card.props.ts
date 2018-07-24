@@ -1,4 +1,4 @@
-import { CardType } from '../../models/card-types';
+import { CardType } from '../../../models/card-types';
 
 export interface CardProps {
     isOpen: boolean;

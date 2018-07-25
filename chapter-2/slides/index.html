@@ -51,16 +51,12 @@
         <pre><code class="language-javascript" data-trim>document.createElement(tagName[, options])
 
 // example
-document.body.onload = addElement;
-function addElement () {
-  const title = document.createElement("h1"); 
-  const content = document.createTextNode("Hello there!"); 
-  title.appendChild(content);  
-
-  const appRoot = document.getElementById("root"); 
-  appRoot.appendChild(title); 
-}
-          </code></pre>
+const Button = (props) => {
+  const btn = document.createElement('button');
+  btn.textContent = props.value;
+  btn.addEventListener('click', props.onClick);
+  return btn;
+}</code></pre>
       </section>
       <section>
         <img class="reset-img" height="100px" src="../../resources/assets/react_logo_wordmark.png">

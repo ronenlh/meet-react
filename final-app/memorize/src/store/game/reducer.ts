@@ -37,7 +37,7 @@ export const gameReducer: Reducer = (state: GameState = initialState, action) =>
         case SET_GAME_ENDED:
             return {
                 ...state,
-                gameFinished: action.payload,
+                gameEnded: action.payload,
             };
         default:
             return state;

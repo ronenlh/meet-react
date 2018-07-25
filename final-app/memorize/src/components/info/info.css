@@ -1,0 +1,13 @@
+.info {
+    margin-bottom: 60px;
+}
+
+.info section {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.info a {
+    text-decoration: none;
+    color: #eee;
+
+}

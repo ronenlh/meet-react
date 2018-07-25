@@ -22,12 +22,10 @@ body {
 	font-size: 16px;
 
 	background: url('/images/backgound.jpg');
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: cover;
 	/* background-color: #333; */
     color: #ffe;
-    width: 100vw;
-    height: 100vh;
 }
 
 h1 {
@@ -165,3 +163,23 @@ a{
       text-shadow: inherit;
     }
   }
+
+  @keyframes blurify {
+	from {
+		animation-timing-function: ease-in;
+		filter: blur(0);
+	}
+
+	60% {
+		animation-timing-function: ease-in;
+		filter: blur(8px);
+	}
+
+	80% {
+		filter: blur(4px);
+	}
+
+	to {
+		filter: blur(5px);
+	}
+}

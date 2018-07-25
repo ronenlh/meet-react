@@ -59,7 +59,7 @@ history.replaceState(state, title, url)</code></pre>
         <i>Declare routes before any rendering takes place</i>
       </section>
       <section>
-        <h3>Example (Angular router)</h3>
+        <h3>Example</h3>
         <pre><code class="language-jsx" data-trim>const appRoutes: Routes = [
   { path: 'crisis-center',
     component: CrisisListComponent
@@ -73,7 +73,7 @@ history.replaceState(state, title, url)</code></pre>
 }) export class AppModule { }</code></pre>
       </section>
       <section>
-        <h3>Example (express.js)</h3>
+        <h3>Example</h3>
         <pre><code class="language-jsx" data-trim>app.get('/', handleIndex);
 app.get('/invoices', handleInvoices);
 app.get('/invoices/:id', handleInvoice);
@@ -139,7 +139,7 @@ const GetTacos: React.SFC&lt;RouteComponentProps&lt;Props>> = (props) => (
         Get me some tacos!
     &lt;/button>);
 
-const GetTacosWithRouter = withRouter(GetTacos);</code></pre>
+export const GetTacosWithRouter = withRouter(GetTacos);</code></pre>
       </section>      
       <section>
           <h3>🛠 Try it</h3>

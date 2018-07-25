@@ -41,25 +41,106 @@
       </section>
       <section>
         <h3>How browser navigation works</h3>
-        <pre><code class="language-jsx" data-trim></code></pre>
+        <img class="reset-img" src="../../resources/assets/browser-routing.png" />
+      </section>
+      <section>
+          <h3>History API</h3>
+          <pre><code class="language-jsx" data-trim>history.back() // or history.go(-1)
+history.forward() // or history.go(1)
+history.go(n) // relative to current. 0 to refresh. 
+history.pushState(state, title, url) 
+history.replaceState(state, title, url)</code></pre>
+      </section>
+      <section>
+        <h3>🍕 Routing types</h3>
       </section>
       <section>
         <h3>Static routes</h3>
-        <pre><code class="language-jsx" data-trim></code></pre>
+        <i>Declare routes before any rendering takes place</i>
+      </section>
+      <section>
+        <h3>Example (Angular router)</h3>
+        <pre><code class="language-jsx" data-trim>const appRoutes: Routes = [
+  { path: 'crisis-center',
+    component: CrisisListComponent
+  },
+  { path: 'hero/:id',
+    component: HeroDetailComponent
+  },/*...*/];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(appRoutes) ]
+}) export class AppModule { }</code></pre>
+      </section>
+      <section>
+        <h3>Example (express.js)</h3>
+        <pre><code class="language-jsx" data-trim>app.get('/', handleIndex);
+app.get('/invoices', handleInvoices);
+app.get('/invoices/:id', handleInvoice);
+app.get('/invoices/:id/edit', handleInvoiceEdit);
+
+app.listen();</code></pre>
       </section>
       <section>
         <h3>Dynamic routes</h3>
-        <pre><code class="language-jsx" data-trim></code></pre>
+        <i>Declare routes as app is rendering</i>
       </section>
+      <section>
+        <img class="reset-img" style="margin: 0" width="100px" src="../../resources/assets/react-router.png">
+        <h3>React router v4</h3>
+      </section>
+      <section>
+        <h3>Everything is a component</h3>
+        <pre><code class="language-jsx" data-trim>import { BrowserRouter, Route } from 'react-router-dom';
+
+const App = () => (
+  &lt;BrowserRouter>
+    &lt;div>
+      &lt;Route path="/tacos" component={Tacos}/>
+      &lt;Route path="/nachos" component={Nachos}/>
+      &lt;Route path="/burritos" component={Burritos}/>
+    &lt;/div>
+  &lt;/BrowserRouter>
+);</code></pre>
+      </section>
+      <section>
+          <h3>Nested routes</h3>
+          <pre><code class="language-jsx" data-trim>
+/*...*/
+&lt;Route path="/tacos" component={Tacos}/>
+/*...*/
+
+const Tacos  = (props) => (
+    &lt;Route
+      path={props.match.url + '/carnitas'}
+      component={Carnitas}
+    />
+);
+</code></pre>
+        </section>
       <section>
         <h3>Links</h3>
-        <pre><code class="language-jsx" data-trim></code></pre>
+        <pre><code class="language-tsx" data-trim>// as a component
+import { Link } from 'react-router-dom';
+
+const GetTacos: React.SFC = () => (&lt;Link to="/tacos">
+  Get me some tacos!
+&lt;/Link>);</code></pre>
       </section>
       <section>
-        <h3>Layouts</h3>
-        <pre><code class="language-jsx" data-trim></code></pre>
-      </section>
-      
+          <h3>Links</h3>
+          <pre><code class="language-tsx" data-trim>// using history api
+import { withRouter, RouteComponentProps } from 'react-router';
+
+interface Props {/*...*/}
+
+const GetTacos: React.SFC&lt;RouteComponentProps&lt;Props>> = (props) => (
+    &lt;button onClick={() => props.history.push(props.match.url + '/tacos')}>
+        Get me some tacos!
+    &lt;/button>);
+
+const GetTacosWithRouter = withRouter(GetTacos);</code></pre>
+      </section>      
       <section>
           <h3>🛠 Try it</h3>
       </section>

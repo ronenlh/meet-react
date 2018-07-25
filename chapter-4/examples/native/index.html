@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Regular link</h1>
+        <a href="/a">link to /a</a>
+        <a href="/b">link to /b</a>
+        <a href="/c">link to /c</a>
+    </section>
+    <section>
+        <h1>Regular link + hash</h1>
+        <a href="#a">link to #a</a>
+        <a href="#b">link to #b</a>
+        <a href="#c">link to #c</a>
+    </section>
+    <section>
+        <h1>History API</h1>
+        <button onclick="goTo('/a')">navigate to /a</button>
+        <button onclick="goTo('/b')">navigate to /b</button>
+        <button onclick="goTo('/c')">navigate to /c</button>
+    </section>
+
+    <script>
+        function goTo(path) {
+            window.history.pushState({}, null, path);
+        }
+    </script>
+</body>
+</html>

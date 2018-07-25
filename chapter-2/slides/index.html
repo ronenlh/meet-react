@@ -142,7 +142,7 @@ const Container = () => (&lt;div>
         <h3>Communicate Between Components</h3>
     </section>
       <section data-transition="slide-in none-out">
-          <h3>Component props</h3>
+          <h3>Parent > Child</h3>
           <pre><code class="language-jsx" data-trim>
 const Header = (props) => (&lt;h1>{props.title}&lt;/h1>);
 
@@ -156,7 +156,7 @@ const Header = (props) => (&lt;h1>{props.title}&lt;/h1>);
           <p style="font-size: 22px;">props are read-only!!!</p>
       </section>
       <section data-transition="none-in slide-out">
-          <h3>Component props</h3>
+          <h3>Parent > Child</h3>
           <pre><code class="language-jsx" data-trim>
 const Header = ({title}) => (&lt;h1>{title}&lt;/h1>);
 
@@ -170,7 +170,7 @@ const Header = ({title}) => (&lt;h1>{title}&lt;/h1>);
           <p style="font-size: 22px;">props are read-only!!!</p>
       </section>
       <section>
-          <h3>Component events</h3>
+          <h3>Child > Parent</h3>
           <pre><code class="language-jsx" data-trim>
 const Header = ({title, onPress}) => 
                     (&lt;h1 onClick={onPress}>{title}&lt;/h1>);
@@ -281,8 +281,8 @@ const List: React.SFC = () =>
               - <b>disabled</b>: boolean to enable/disable the card.<br>
               - <b>onPress</b>: callback function that will be called when card is clicked.<br>
             </div>
-            3. Create a Card Board component which displays 10 cards couples (20) <br>
-            4. Create a Score Panel component which displays: moves and passed time <br>
+            3. Create a Card Board component which displays 10 card-couples (20 total) <br>
+            4. Create a Score Panel component which displays number of moves <br>
           </div>
       </section>
     </div>

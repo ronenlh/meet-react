@@ -15,7 +15,7 @@ export const selectCardMiddleware: Middleware = (store: Store<GameState>) => (ne
         return;
     }
     // set card 2
-    next(actions.incrementSteps()); // increment moves
+    next(actions.setMoves(store.getState().moves + 1)); // increment moves
     const secondCardId = action.payload.id;
     store.dispatch(actions.setSecondCard(secondCardId));
 

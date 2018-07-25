@@ -12,5 +12,4 @@ export const SET_CARDS = '@GAME/SET_CARDS'; // document
 export const SET_FIRST_CARD = '@GAME/SET_FIRST_CARD'; // document
 export const SET_SECOND_CARD = '@GAME/SET_SECOND_CARD'; // document
 export const SET_MATCHED_CARDS = '@GAME/SET_MATCHED_CARDS'; // document
-export const STEPS_INCREMENT = '@GAME/STEPS_INCREMENT'; // document
-export const STEPS_RESET = '@GAME/STEPS_RESET'; // document
+export const SET_MOVES = '@GAME/SET_MOVES'; // document

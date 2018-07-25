@@ -12,5 +12,5 @@ export const startGameMiddleware: Middleware = (store: Store<GameState>) => (nex
     store.dispatch(actions.setCards(shuffledCards));
     store.dispatch(actions.setMatchedCards({}));
     store.dispatch(actions.setGameEnded(false));
-    store.dispatch(actions.resetSteps());
+    store.dispatch(actions.setMoves(0));
 };

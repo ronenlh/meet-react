@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.0/redux.js"></script>
+    <title>Redux Middlewares</title>
+</head>
+
+<body>
+    <button id="decrement">-</button>
+    <div id="count">0</div>
+    <button id="increment">+</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', start);
+
+        function start() {
+            const { createStore, applyMiddleware } = Redux;
+
+            // INITIALIZE
+            // 1. define all available action types
+            const types = {
+                INCREMENT: 'INCREMENT', // command
+                DECREMENT: 'DECREMENT', // command
+                SET_COUNT: 'SET_COUNT', // document
+            }
+
+            // 2. create action creators for them
+            const actions = {
+                increment: () => ({ type: types.INCREMENT }),
+                decrement: () => ({ type: types.DECREMENT }),
+                setCount: (count) => ({ type: types.SET_COUNT, payload: count }),
+            };
+
+            // 3. define initial app state
+            const initialState = {
+                count: 0
+            }
+
+            // 4. create a reducer that handles the actions
+            const reducer = (state = initialState, action) => {
+                switch (action.type) {
+                    case types.SET_COUNT:
+                        return {
+                            count: action.payload
+                        };
+                    default:
+                        return state;
+                }
+            }
+
+            const counterMiddleware = (store) => (next) => (action) => {
+                switch (action.type) {
+                    case types.INCREMENT:
+                        next(actions.setCount(store.getState().count + 1));
+                        return;
+                    case types.DECREMENT:
+                        next(actions.setCount(store.getState().count - 1));
+                        return;
+                }
+                next(action);
+            }
+
+            // 5. create the store
+            const store = createStore(reducer, applyMiddleware(counterMiddleware));
+
+            // Thats it! you're good to go!
+            // Using:
+
+            // Subscribe to changes
+            store.subscribe(() => {
+                console.log('state changed');
+                document.getElementById('count').innerHTML = store.getState().count;
+            });
+
+            // Start dispatching actions
+            document.getElementById('increment').addEventListener('click', () => store.dispatch(actions.increment()));
+            document.getElementById('decrement').addEventListener('click', () => store.dispatch(actions.decrement()));
+        }
+    </script>
+</body>
+
+</html>

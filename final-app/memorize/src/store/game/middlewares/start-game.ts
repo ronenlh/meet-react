@@ -9,8 +9,8 @@ export const startGameMiddleware: Middleware = (store: Store<GameState>) => (nex
         return next(action);
     }
     const shuffledCards = shuffle(store.getState().cards);
-    store.dispatch(actions.setCards(shuffledCards));
-    store.dispatch(actions.setMatchedCards({}));
-    store.dispatch(actions.setGameEnded(false));
-    store.dispatch(actions.setMoves(0));
+    next(actions.setCards(shuffledCards));
+    next(actions.setMatchedCards({}));
+    next(actions.setGameEnded(false));
+    next(actions.setMoves(0));
 };

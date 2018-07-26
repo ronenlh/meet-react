@@ -62,10 +62,10 @@
         <h3>Action</h3>
         <div>Unified way to communicate</div>
         <pre><code class="language-tsx" data-trim>{
-  type: '@GAME/START_GAME'
+  type: 'START_GAME'
 }</code></pre>
         <pre><code class="language-tsx" data-trim>{
-  type: '@GAME/SELECT_CARD',
+  type: 'SELECT_CARD',
   payload: { id: 32 }
 }</code></pre>
       </section>
@@ -73,7 +73,7 @@
         <h3>Action creator</h3>
         <div>Simple functions that create actions</div>
 <pre><code class="language-tsx" data-trim>export const selectCard = (id: number) => ({
-    type: '@GAME/SELECT_CARD',
+    type: 'SELECT_CARD',
     payload: id
 });</code></pre>
       </section>

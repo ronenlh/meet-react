@@ -45,6 +45,7 @@
                 switch (action.type) {
                     case types.SET_COUNT:
                         return {
+                            ...state,
                             count: action.payload
                         };
                     default:

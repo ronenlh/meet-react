@@ -18,14 +18,14 @@ class Student {
 }
 
 // arrow functions
-// geetAsync() {
+// greetAsync() {
 //     setTimeout(function(){
 //         console.log(`Hi ${this.firstName} ${this.lastName}`);
 //     });
 // }
 
 // default params
-// geetAsync(after = 1000) {
+// greetAsync(after = 1000) {
 //      const before = window.performance.now();
 //     setTimeout(function(){
 //          console.log(window.performance.now() - before);
@@ -35,7 +35,7 @@ class Student {
 
 
 // spread objects / arrays
-// geetAsync(options) {
+// greetAsync(options) {
 //      const before = window.performance.now();
 //     setTimeout(function(){
 //          console.log(window.performance.now() - before);

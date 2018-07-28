@@ -148,6 +148,8 @@ const Header = (props) => (&lt;h1>{props.title}&lt;/h1>);
 
 // Usage:
 &lt;Header title="Hello React!" />
+// or
+&lt;Header title={'Hello React!'} />
 
 // Result:
 &lt;h1>Hello React!&lt;/h1>
@@ -162,6 +164,8 @@ const Header = ({title}) => (&lt;h1>{title}&lt;/h1>);
 
 // Usage:
 &lt;Header title="Hello React!" />
+// or
+&lt;Header title={'Hello React!'} />
 
 // Result:
 &lt;h1>Hello React!&lt;/h1>
@@ -186,18 +190,18 @@ const Header = ({title, onPress}) =>
       </section>
       <section>
         <h3>Components composition</h3>
-           <pre><code class="language-jsx" data-trim>const ComponentA = (props) => (&lt;div>Content is: {props.children}&lt;/div>);
-const Title = () => (&lt;h1>Hello React!&lt;/h1>);
+           <pre><code class="language-jsx" data-trim>const Container = ({children}) => (&lt;p>Content is: {children}&lt;/p>);
+const Title = ({value}) => (&lt;h1>{value}&lt;/h1>);
 
 // Usage:
-&lt;ComponentA>
-  &lt;Title />
-&lt;/ComponentA>
+&lt;Container>
+  &lt;Title value="Hello React!" />
+&lt;/Container>
 
 // Result:
-&lt;div>
+&lt;p>
     Content is: &lt;h1>Hello React!&lt;/h1>
-&lt;/div>
+&lt;/p>
           </code></pre>       
     </section>
       <section>

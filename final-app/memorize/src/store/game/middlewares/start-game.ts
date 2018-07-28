@@ -10,7 +10,7 @@ export const startGameMiddleware: Middleware = (store: Store<GameState>) => (nex
     }
     const shuffledCards = shuffle(store.getState().cards);
     next(actions.setCards(shuffledCards));
-    next(actions.setMatchedCards(store.getState().cards.reduce((acc, c) => {acc[c.id] = true; return acc; }, {})));
-    next(actions.setGameEnded(true));
+    next(actions.setMatchedCards({}));
+    next(actions.setGameEnded(false));
     next(actions.setMoves(0));
 };

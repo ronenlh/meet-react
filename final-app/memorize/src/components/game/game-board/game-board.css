@@ -1,0 +1,24 @@
+.game-board {
+	width: 80%;
+    margin: auto;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+/* For Tablets and larger screens
+****************/
+@media (min-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+}

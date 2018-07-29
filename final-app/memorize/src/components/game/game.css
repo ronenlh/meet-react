@@ -1,0 +1,8 @@
+.game {
+    height: 100%;
+}
+
+.game.ended {
+    pointer-events: none;
+    animation: blurify 1s forwards;
+}

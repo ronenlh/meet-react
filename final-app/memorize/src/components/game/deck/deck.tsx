@@ -1,0 +1,1 @@
+// this component receives all cards and display them

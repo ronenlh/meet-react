@@ -1,0 +1,1 @@
+// this component receives moves and render them

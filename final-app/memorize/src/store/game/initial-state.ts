@@ -2,7 +2,7 @@ import { CardType } from '../../models/card-types';
 
 export interface GameState {
     cards: Array<{
-        value: CardType;
+        value: string;
         id: number;
     }>;
     matchedCards: {[id: number]: boolean};
@@ -15,83 +15,83 @@ export interface GameState {
 export const initialState: GameState = {
     cards: [
         {
-          value: '😃',
+          value: CardType.smilyFace,
           id: 0,
         },
         {
-          value: '🚀',
+          value: CardType.rocket,
           id: 1,
         },
         {
-          value: '🎉',
+          value: CardType.party,
           id: 2,
         },
         {
-          value: '🍻',
+          value: CardType.beer,
           id: 3,
         },
         {
-          value: '💩',
+          value: CardType.poo,
           id: 4,
         },
         {
-          value: '🐸',
+          value: CardType.frog,
           id: 5,
         },
         {
-          value: '🦄',
+          value: CardType.unicorn,
           id: 6,
         },
         {
-          value: '🌈',
+          value: CardType.rainbow,
           id: 7,
         },
         {
-          value: '🍌',
+          value: CardType.banana,
           id: 8,
         },
         {
-          value: '🍕',
+          value: CardType.pizza,
           id: 9,
         },
         {
-          value: '😃',
+          value: CardType.smilyFace,
           id: 10,
         },
         {
-          value: '🚀',
+          value: CardType.rocket,
           id: 11,
         },
         {
-          value: '🎉',
+          value: CardType.party,
           id: 12,
         },
         {
-          value: '🍻',
+          value: CardType.beer,
           id: 13,
         },
         {
-          value: '💩',
+          value: CardType.poo,
           id: 14,
         },
         {
-          value: '🐸',
+          value: CardType.frog,
           id: 15,
         },
         {
-          value: '🦄',
+          value: CardType.unicorn,
           id: 16,
         },
         {
-          value: '🌈',
+          value: CardType.rainbow,
           id: 17,
         },
         {
-          value: '🍌',
+          value: CardType.banana,
           id: 18,
         },
         {
-          value: '🍕',
+          value: CardType.pizza,
           id: 19,
         }
       ],

@@ -1,9 +1,7 @@
-import { CardType } from '../../../models/card-types';
-
 export interface CardProps {
     isOpen: boolean;
     disabled: boolean;
-    value: CardType;
+    value: string;
     isMatched: boolean;
     onClick(): void;
 }

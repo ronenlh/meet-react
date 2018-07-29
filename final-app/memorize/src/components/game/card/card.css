@@ -15,10 +15,6 @@
 	
 }
 
-i.card {
-	font-family: 'Noto Sans', sans-serif;	
-}
-
 .card.open {
 	transform: rotateY(0);
 	background: #02b3e4;

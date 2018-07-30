@@ -58,7 +58,6 @@ describe('Button', () => {
         expect(onClick).toHaveBeenCalled();
     });
     it('should display card as open and disabled when isOpen prop is true', () => {
-        const onClick = jest.fn();
         const wrapper = shallow(
             <Card
                 onClick={() => {/**/}}
@@ -75,7 +74,6 @@ describe('Button', () => {
     });
 
     it('should display card as matched when isMatched prop is true', () => {
-        const onClick = jest.fn();
         const wrapper = shallow(
             <Card
                 onClick={() => {/**/}}

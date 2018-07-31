@@ -166,10 +166,10 @@ export class Game extends React.Component<{}, GameState> {
                     }
                 });
             }
-            this.setState((prevState) => ({
+            this.setState({
                 card1: null,
                 card2: null,
-            }));
+            });
         }, 1000);
     }
 

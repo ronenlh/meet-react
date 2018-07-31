@@ -103,19 +103,32 @@ const App = () => (
   &lt;/BrowserRouter>
 );</code></pre>
       </section>
-      <section>
-          <h3>Nested routes</h3>
-          <pre><code class="language-jsx" data-trim>
-/*...*/
-&lt;Route path="/tacos" component={Tacos}/>
-/*...*/
+      <section data-transition="slide-in none-out">
+        <h3>Nested routes</h3>
+        <pre><code class="language-tsx" data-trim>
 
-const Tacos  = (props) => (
+const Tacos: React.SFC = () => (
+    &lt;Route
+      path="/tacos/carnitas" // absolute route
+      component={Carnitas}
+    />
+);
+
+export Tacos;
+</code></pre>
+      </section>
+      <section data-transition="none-in slide-out">
+          <h3>Nested routes</h3>
+          <pre><code class="language-tsx" data-trim>import { withRouter, RouteComponentProps } from 'react-router';
+
+const Tacos: React.SFC&lt;RouteComponentProps&lt;TacosProps>>  = (props) => (
     &lt;Route
       path={props.match.url + '/carnitas'}
       component={Carnitas}
     />
 );
+
+export const TacosWithRouter = withRouter(Tacos);
 </code></pre>
         </section>
       <section>

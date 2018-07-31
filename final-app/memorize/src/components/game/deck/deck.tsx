@@ -1,12 +1,9 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../../store/game/actions';
-import { GameState } from '../../../store/game/initial-state';
 import './deck.css';
 import { Card } from '../card/card';
+import { GameActions, GameState } from '../game.state';
 
-type DeckProps = PropsFromState & PropsFromDispatch;
+type DeckProps  = Pick<GameState, 'cards' | 'card1' | 'card2' | 'matchedCards' >& GameActions;
 export class Deck extends React.Component<DeckProps> {
     render() {
         return (
@@ -44,22 +41,3 @@ export class Deck extends React.Component<DeckProps> {
         return !!this.props.matchedCards[id];
     }
 }
-
-type PropsFromState =  Pick<GameState, 'cards' | 'matchedCards' | 'card1' | 'card2'>;
-const mapStateToProps = (state: GameState): PropsFromState => {
-    return {
-        card1: state.card1,
-        card2: state.card2,
-        cards: state.cards,
-        matchedCards: state.matchedCards
-    };
-};
-
-interface PropsFromDispatch {
-    selectCard: typeof actions.selectCard;
-}
-const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
-    selectCard: (id: number) => dispatch(actions.selectCard(id))
-});
-
-export const ConnectedDeck = connect(mapStateToProps, mapDispatchToProps)(Deck);

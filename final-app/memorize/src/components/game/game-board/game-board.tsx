@@ -1,15 +1,13 @@
 
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../../store/game/actions';
-import { ConnectedDeck } from '../deck/deck';
-import { ConnectedScorePanel } from '../score-panel/score-panel';
+import { Deck } from '../deck/deck';
+import { ScorePanel } from '../score-panel/score-panel';
 import './game-board.css';
 import { Logo } from '../../logo/logo';
+import { GameState, GameActions } from '../game.state';
 
-type GameBoardProps = PropsFromDispatch;
-class GameBoard extends React.Component<GameBoardProps> {
+type GameBoardProps = GameState & GameActions;
+export class GameBoard extends React.Component<GameBoardProps> {
     componentDidMount() {
         this.props.startGame();
     }
@@ -19,22 +17,19 @@ class GameBoard extends React.Component<GameBoardProps> {
             <div className="game-board">
                 <div className="header">
                     <Logo size="small"/>
-                    <ConnectedScorePanel />
+                    <ScorePanel moves={this.props.moves}/>
                 </div>
                 <div className="container">
-                    <ConnectedDeck />
+                    <Deck
+                        startGame={this.props.startGame}
+                        selectCard={this.props.selectCard}
+                        card1={this.props.card1}
+                        card2={this.props.card2}
+                        cards={this.props.cards}
+                        matchedCards={this.props.matchedCards}
+                    />
                 </div>
             </div>
         );
     }
 }
-
-interface PropsFromDispatch {
-    startGame: typeof actions.startGame;
-}
-const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => {
-    return {
-        startGame: () => dispatch(actions.startGame())
-    };
-};
-export const ConnectedGameBoard = connect(null, mapDispatchToProps)(GameBoard);

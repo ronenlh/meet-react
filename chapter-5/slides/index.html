@@ -159,7 +159,31 @@
         <h3>React-Redux</h3>        
       </section>
       <section>
-        <h3>connect state to props (inject)</h3>
+          <img class="reset-img" height="600px" src="../../resources/assets/redux-floor-without-redux.webp">
+          <br>
+          <i style="font-size: 20px;">source: https://www.smashingmagazine.com/2018/07/redux-designers-guide/</i>
+      </section>
+      <section>
+          <img class="reset-img" height="600px" src="../../resources/assets/redux-floor-with-redux.webp">
+          <br>
+          <i style="font-size: 20px;">source: https://www.smashingmagazine.com/2018/07/redux-designers-guide/</i>
+      </section>
+      <section>
+        <h3>Providing the store</h3>
+      </section>
+      <section>
+          <h3>Store Provider</h3>
+          <pre><code class="language-tsx" data-trim>import { Provider } from 'react-redux';
+
+&lt;Provider store={store}>
+  &lt;App />
+&lt;/Provider></code></pre>
+      </section>
+      <section>
+        <h3>Accessing the store</h3>
+      </section>
+      <section>
+        <h3>Connect state to props</h3>
         <pre><code class="language-tsx" data-trim>import { connect } from 'react-redux';
 
 type PropsFromState =  Pick&lt;GameState, 'moves'>;
@@ -176,6 +200,9 @@ const ConnectedCongrats = connect(mapStateToProps)(Congrats); </code></pre>
 
 const Congrats: React.SFC&lt;CongratsProps> = ({moves}) => 
       (&lt;div className="score">Score: {moves}&lt;/div>);</code></pre>
+      </section>
+      <section>
+        <h3>🔥 Fire some actions</h3>
       </section>
       <section>
           <h3>Connect actions to props</h3>

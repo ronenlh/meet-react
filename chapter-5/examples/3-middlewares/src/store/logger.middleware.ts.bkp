@@ -1,0 +1,10 @@
+import { Middleware } from 'redux';
+
+export const loggerMiddleware: Middleware = (store) => (next) => (action) => {
+    console.log('----------------------------------------');
+    console.log('State before: ', store.getState());
+    console.log(`Action: ${action.type}`);
+    next(action);
+    console.log('State after: ', store.getState());
+    console.log('----------------------------------------');
+}

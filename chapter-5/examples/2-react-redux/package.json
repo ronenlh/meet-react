@@ -1,0 +1,27 @@
+{
+  "name": "memorize",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-scripts-ts": "^2.17.0",
+    "redux": "^4.0.0"
+  },
+  "scripts": {
+    "start": "../../../final-app/memorize/node_modules/.bin/react-scripts-ts start",
+    "build": "../../../final-app/memorize/node_modules/.bin/react-scripts-ts build",
+    "test": "../../../final-app/memorize/node_modules/.bin/react-scripts-ts test --env=jsdom",
+    "eject": "../../../final-app/memorize/node_modules/.bin/react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.4",
+    "@types/node": "^10.5.2",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.6",
+    "@types/redux": "^3.6.0",
+    "typescript": "^2.9.2"
+  }
+}

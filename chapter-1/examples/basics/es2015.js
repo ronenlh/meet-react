@@ -11,10 +11,10 @@ function OldStudent(firstName, lastName, age){
     this.lastName = lastName;
     this.age = age;
 }
-Student.prototype.greet = function() {
+OldStudent.prototype.greet = function() {
     return 'Hi ' + this.firstName + ' ' + this.lastName;
 }
-var me = new OldStudent('Emanuel', 'Deckel', 30);
+var me = new OldStudent('Emanuel', 'Deckel', 32);
 
 // es2015
 class NewStudent {
@@ -46,7 +46,7 @@ function greet(props){
 }
 
 // into this
-// const shorterGreet = ({name}) => ({value: `Hello ${name}!`});
+const shorterGreet = ({name}) => ({value: `Hello ${name}!`});
 
 // ------------------------------------------- //
 const greetAsync = () => {
@@ -56,13 +56,13 @@ const greetAsync = () => {
 }
 
 // default params
-// greetAsync(after = 1000) {
-//      const before = window.performance.now();
-//     setTimeout(function(){
-//          console.log(window.performance.now() - before);
-//         console.log(`Hi ${this.firstName} ${this.lastName}`);
-//     }, after);
-// }
+greetAsync = (after = 1000) => {
+     const before = window.performance.now();
+    setTimeout(function(){
+         console.log(window.performance.now() - before);
+        console.log(`Hi ${this.firstName} ${this.lastName}`);
+    }, after);
+}
 
 
 // spread objects / arrays

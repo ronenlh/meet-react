@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { GameState } from '../../../store/game/initial-state';
 import { connect } from 'react-redux';
 
-const Congrats: React.SFC<PropsFromState> = ({moves}) => (
+const Congrats: React.FC<PropsFromState> = ({moves}) => (
     <div className="overlay">
         <div className="congrats">
             <div>🎉🎉🎉</div>

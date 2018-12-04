@@ -198,7 +198,7 @@ const ConnectedCongrats = connect(mapStateToProps)(Congrats); </code></pre>
           <h3>use it</h3>
           <pre><code class="language-tsx" data-trim>type CongratsProps = InnerProps & PropsFromState;
 
-const Congrats: React.SFC&lt;CongratsProps> = ({moves}) => 
+const Congrats: React.FC&lt;CongratsProps> = ({moves}) => 
       (&lt;div className="score">Score: {moves}&lt;/div>);</code></pre>
       </section>
       <section>
@@ -223,7 +223,7 @@ const ConnectedCongrats = connect(null, mapDispatchToProps)(Congrats);</code></p
           <h3>use it</h3>
           <pre><code class="language-tsx" data-trim>type CongratsProps = InnerProps & PropsFromDispatch;
 
-const Congrats: React.SFC&lt;CongratsProps> = ({startGame}) => 
+const Congrats: React.FC&lt;CongratsProps> = ({startGame}) => 
       (&lt;button onClick={startGame}>Start game&lt;/button>);</code></pre>
       </section>
       <section>

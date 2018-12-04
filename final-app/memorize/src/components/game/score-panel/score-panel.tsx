@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { GameState } from '../../../store/game/initial-state';
 
 type Props = PropsFromState;
-const ScorePanel: React.SFC<Props> = ({moves}) => (
+const ScorePanel: React.FC<Props> = ({moves}) => (
     <div>
         <div>Moves: {moves}</div>
     </div>

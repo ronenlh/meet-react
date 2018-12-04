@@ -107,7 +107,7 @@ const App = () => (
         <h3>Nested routes</h3>
         <pre><code class="language-tsx" data-trim>
 
-const Tacos: React.SFC = () => (
+const Tacos: React.FC = () => (
     &lt;Route
       path="/tacos/carnitas" // absolute route
       component={Carnitas}
@@ -121,7 +121,7 @@ export Tacos;
           <h3>Nested routes</h3>
           <pre><code class="language-tsx" data-trim>import { withRouter, RouteComponentProps } from 'react-router';
 
-const Tacos: React.SFC&lt;RouteComponentProps&lt;TacosProps>>  = (props) => (
+const Tacos: React.FC&lt;RouteComponentProps&lt;TacosProps>>  = (props) => (
     &lt;Route
       path={props.match.url + '/carnitas'}
       component={Carnitas}
@@ -136,7 +136,7 @@ export const TacosWithRouter = withRouter(Tacos);
         <pre><code class="language-tsx" data-trim>// as a component
 import { Link } from 'react-router-dom';
 
-const GetTacos: React.SFC = () => (&lt;Link to="/tacos">
+const GetTacos: React.FC = () => (&lt;Link to="/tacos">
   Get me some tacos!
 &lt;/Link>);</code></pre>
       </section>
@@ -147,7 +147,7 @@ import { withRouter, RouteComponentProps } from 'react-router';
 
 interface Props {/*...*/}
 
-const GetTacos: React.SFC&lt;RouteComponentProps&lt;Props>> = (props) => (
+const GetTacos: React.FC&lt;RouteComponentProps&lt;Props>> = (props) => (
     &lt;button onClick={() => props.history.push(props.match.url + '/tacos')}>
         Get me some tacos!
     &lt;/button>);

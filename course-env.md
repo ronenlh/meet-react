@@ -13,7 +13,7 @@
 # Clone project
 - clone project into Documents library: 
     - `cd Documents`
-    - `git clone https://github.com/nabilnaffar/meet-react.git`
+    - `git clone https://github.com/emanueldeckel/meet-react.git`
 - install dependencies
     - `cd meet-react`
     - `npm install`

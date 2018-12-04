@@ -14,7 +14,7 @@ function OldStudent(firstName, lastName, age){
 Student.prototype.greet = function() {
     return 'Hi ' + this.firstName + ' ' + this.lastName;
 }
-var me = new OldStudent('Nabil', 'Naffar', 30);
+var me = new OldStudent('Emanuel', 'Deckel', 30);
 
 // es2015
 class NewStudent {
@@ -29,7 +29,7 @@ class NewStudent {
         return `Hi ${this.firstName} ${this.lastName}`
     }
 }
-const otherMe = new NewStudent('Nabil', 'Naffar', 30);
+const otherMe = new NewStudent('Emanuel', 'Deckel', 30);
 
 
 // ------------------------------------------- //
@@ -78,8 +78,8 @@ const greetAsync = () => {
 
 // ...rest
 const object = {
-    firstName: 'Nabil',
-    lastName: 'Naffar',
+    firstName: 'Emanuel',
+    lastName: 'Deckel',
     age: 30
 }
 

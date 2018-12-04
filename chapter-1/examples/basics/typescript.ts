@@ -1,8 +1,8 @@
 // import export
 
 //// =========================================== types vs interfaces vs classes
-// const firstnName: string = 'Nabil';
-// const lastName: string = 'Naffar';
+// const firstnName: string = 'Emanuel';
+// const lastName: string = 'Deckel';
 
 // type StringOrNumber = string | number;
 // const age: StringOrNumber = true;

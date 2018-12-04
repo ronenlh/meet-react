@@ -1,6 +1,6 @@
 Introduction to ReactJS
 ==========
-Slides: [https://emanueldeckel.github.io/meet-react](https://emanueldeckel.github.io/meet-react)
+Slides: [https://deckele.github.io/meet-react](https://deckele.github.io/meet-react)
 
 ## Course Overview: 
 This course is an introduction to ReactJS library by Facebook – aimed only to FE Developers with experience on other framework (for example: Angular) and with 0 experience in React.

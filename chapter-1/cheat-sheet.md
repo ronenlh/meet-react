@@ -11,4 +11,4 @@ npm
 
 create-react-app
 ================
-- generate typescript project: `create-react-app my-app --scripts-version=react-scripts-ts`
+- generate typescript project: `npx create-react-app my-app --typescript`

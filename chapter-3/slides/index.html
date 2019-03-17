@@ -90,7 +90,7 @@ class Counter extends React.Component<CounterProps, CounterState>{
   }
 
   render() {
-      return <button>Count: {this.state.count}</button>
+      return &lt;button>Count: {this.state.count}&lt;/button>
   }
 }</code></pre>
       </section>
@@ -106,7 +106,7 @@ class Counter extends React.Component<CounterProps, CounterState>{
   }
 
   render() {
-      return <button onClick={this.increment}>{this.state.count}</button>)
+      return &lt;button onClick={this.increment}>{this.state.count}&lt;/button>)
   }
 }
 </code></pre>
@@ -152,7 +152,7 @@ import React, { useState } from "react";
 
 export const Counter: FC = () => {
   const [ count, setCount ] = useState(0);
-  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+  return &lt;button onClick={() => setCount(count + 1)}>Count: {count}&lt;/button>
 };
         </code></pre>
       </section>

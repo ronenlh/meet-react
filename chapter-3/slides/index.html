@@ -78,18 +78,19 @@ class ComponentName extends React.Component&lt;ComponentProps>{
       </section>
       <section>
         <h3>Define and initialize the state</h3>
-        <pre><code class="language-tsx" data-trim>class CounterState {
-  count: number = 0;
+        <pre><code class="language-tsx" data-trim>
+interface CounterState {
+  count: number;
 }
 
-class CounterName extends React.Component&lt;CounterProps, CounterState>{
+class Counter extends React.Component<CounterProps, CounterState>{
   constructor(props: CounterProps) {
     super(props);
-    this.state = new CounterState();
+    this.state = {count: 0};
   }
 
   render() {
-      return (&lt;button>Count: {this.state.count}&lt;/button>)
+      return <button>Count: {this.state.count}</button>
   }
 }</code></pre>
       </section>
@@ -98,21 +99,22 @@ class CounterName extends React.Component&lt;CounterProps, CounterState>{
           <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
   constructor(props: CounterProps){/**/}
   
-  increment() {
+  increment = () => {
     this.setState({
       count: this.state.count + 1
     });
   }
 
   render() {
-      return (&lt;button onClick={this.increment.bind(this)}>{this.state.count}&lt;/button>)
+      return <button onClick={this.increment}>{this.state.count}</button>)
   }
 }
 </code></pre>
       </section>
       <section data-transition="slide-in none-out">
           <h3>State derived from previous state</h3>
-          <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
+          <pre><code class="language-tsx" data-trim>
+class Counter extends React.Component<CounterProps, CounterState>{
   ...
   increment() {
     this.setState((prevState) => {
@@ -127,7 +129,7 @@ class CounterName extends React.Component&lt;CounterProps, CounterState>{
       </section>
       <section data-transition="none-in slide-out">
           <h3>State derived from previous state</h3>
-          <pre><code class="language-tsx" data-trim>class Counter extends React.Component&lt;CounterProps, CounterState>{
+          <pre><code class="language-tsx" data-trim>class Counter extends React.Component<CounterProps, CounterState>{
   ...
   increment() {
     this.setState((prevState) => ({

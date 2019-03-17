@@ -140,6 +140,22 @@ class CounterName extends React.Component&lt;CounterProps, CounterState>{
 
 </code></pre>
       </section>
+
+      
+      <section>
+        <h1>State with hooks API!</h1>
+      </section>
+      <section>
+        <h3>useState</h3>
+        <pre><code class="language-tsx" data-trim>
+import React, { useState } from "react";
+
+export const Counter: FC = () => {
+  const [ count, setCount ] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+};
+</code></pre>     
+      
       <section>
         <img class="reset-img" src="../../resources/assets/simba.jpg">
         <h3>Components Lifecycle</h3>

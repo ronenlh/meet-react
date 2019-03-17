@@ -201,6 +201,43 @@ export const Counter: FC = () => {
 </div>
       </section>
       <section>
+        <h3>Lifecycle hooks with hooks API!</h3>
+      </section>
+      <section>
+        <h3>useEffect</h3>
+        <pre><code class="language-tsx" data-trim>
+import React, { useState, useEffect } from 'react';
+
+interface FriendStatusProps {
+  friend: Friend;
+}
+interface Friend {
+  id: string;
+}
+
+export const FriendStatus: FC<FriendStatusProps> = (props) => {
+  const [isOnline, setIsOnline] = useState(null);
+
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
+  }
+
+  useEffect(() => {
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+  if (isOnline === null) {
+    return 'Loading...';
+  }
+  return isOnline ? 'Online' : 'Offline';
+}
+        </code></pre>
+      </section>
+      <section>
           <h3>🎨 Browser rendering</h3>
       </section>
       <section>

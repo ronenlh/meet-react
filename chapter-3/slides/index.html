@@ -246,6 +246,50 @@ export const FriendStatus: FC<FriendStatusProps> = (props) => {
         </code></pre>
       </section>
       <section>
+          <h3>Rules of Hooks</h3>
+          <ul>
+            <li>
+              <h4>Only Call Hooks at the Top Level</h4>
+              <p>Don’t call Hooks inside loops, conditions, or nested functions.</p>
+            </li>
+            <li>
+              <h4>Only Call Hooks from React Functions</h4>
+              <p>Don’t call Hooks from regular JavaScript functions.</p>
+            </li>
+          </ul>
+      </section>
+      <section>
+          <h3>Custom Hooks</h3>
+          <pre><code class="language-tsx" data-trim>
+ export function useScrollPosition(): ScrollPosition {
+  const [position, setScrollPosition] = useState<ScrollPosition>(getScrollPosition());
+  useEffect(() => {
+    let requestRunning: number | null = null;
+    function handleScroll() {
+      if (requestRunning === null) {
+        requestRunning = window.requestAnimationFrame(() => {
+          setScrollPosition(getScrollPosition());
+          requestRunning = null;
+        });
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  return position;
+}
+          </pre></code>
+      </section>
+      <section>
+        <h3>Example usage of useScrollPosition custom Hook</h3>
+        <pre><code class="language-tsx" data-trim>
+const Example: FC = () => {
+  const { x, y } = useScrollPosition();
+  return `X scroll is: ${x}. Y scroll is: ${y}`;
+}
+         </code></pre>
+      </section>
+      <section>
           <h3>🎨 Browser rendering</h3>
       </section>
       <section>

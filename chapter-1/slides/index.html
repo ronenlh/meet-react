@@ -1,149 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Meet React.js</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../resources/reveal.js/css/reveal.css" />
+    <link
+      rel="stylesheet"
+      href="../../resources/reveal.js/css/theme/night.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../resources/reveal.js/lib/css/zenburn.css"
+    />
+    <link rel="stylesheet" href="../../resources/prism/prism.css" />
+    <style>
+      body {
+        background-image: url(../../resources/assets/react-logo-dark.svg);
+        background-repeat: no-repeat;
+        background-size: 50% auto;
+        background-position: -25% -60%;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <title>Meet React.js</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="../../resources/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="../../resources/reveal.js/css/theme/night.css">
-  <link rel="stylesheet" href="../../resources/reveal.js/lib/css/zenburn.css">
-  <link rel="stylesheet" href="../../resources/prism/prism.css" />
-  <style>
-    body {
-      background-image: url(../../resources/assets/react-logo-dark.svg);
-      background-repeat: no-repeat;
-      background-size: 50% auto;
-      background-position: -25% -60%;
-    }
+      .reset-img {
+        border: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+      }
+    </style>
+  </head>
 
-    .reset-img {
-      border: 0 !important;
-      background: none !important;
-      box-shadow: none !important;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section>
-        <a style="position: fixed; left: 20px; font-size: 30px" href="../../">◀</a>
-        <div>
-          <img style="display: inline-block; margin: 0;" class="reset-img" width="70px" src="../../resources/assets/basics.png" />
-          <h3  style="display: inline-block;">The basics</h3>
-        </div>
-      </section>
-      <section>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <a style="position: fixed; left: 20px; font-size: 30px" href="../../"
+            >◀</a
+          >
+          <div>
+            <img
+              style="display: inline-block; margin: 0"
+              class="reset-img"
+              width="70px"
+              src="../../resources/assets/basics.png"
+            />
+            <h3 style="display: inline-block">The basics</h3>
+          </div>
+        </section>
+        <section>
           <i>"With good basics you'll have endless options"</i>
-      </section>
-      <section>
-        <img style="display: inline-block; margin: 0;" class="reset-img" width="70px" src="../../resources/assets/tc39.png">
-        <h3 style="display: inline-block;">What is ECMAScript?</h3>
-      </section>
-      <section>
-        <h3>ES Versions History</h3>
-        <img class="reset-img" src="../../resources/assets/js-history.png" />
-      </section>
-      <section data-transition="slide-in none-out">
-        <h3 style="text-align: left">ES5</h3>
-      </section>
-      <section data-transition="none-in none-out">
-        <h3 style="text-align: left">ES5 ► ES6 </h3>
-      </section>
-      <section data-transition="none-in none-out">
-        <h3 style="text-align: left">ES5 ► ES2015 </h3>
-      </section>
-      <section data-transition="none-in slide-out">
-        <h3 style="text-align: left">ES5 ► ES2015 ► ES2016 ► ... 🔮</h3>
-      </section>
-      <section>
-        <h3>ESNext</h3>
-        <p>https://kangax.github.io/compat-table/esnext/</p>
-        <iframe width="100%" height="500px" src="http://kangax.github.io/compat-table/esnext/"></iframe>
-      </section>
-      <section>
-        <img style="display: inline-block; margin: 0;" class="reset-img" width="70px" src="../../resources/assets/ts-logo.png">
-        <h3 style="display: inline-block;">Typescript</h3>
-        <div style="text-align: left; font-size: 36px; margin: auto; margin-top: 60px; width: 570px">
-          <div>Static Typing</div>
-          <div>Syntactical superset of JavaScript</div>
-          <div>Transpiles to JavaScript</div>
-        </div>
-      </section>
-      <section>
-        <img class="reset-img" width="500px" src="../../resources/assets/es-ts.png">
-      </section>
-      <section>
-        <h3>Dev environment</h3>
-        <div style="text-align: left; width: 600px; margin: auto">
-          <div><img class="reset-img" style="margin: 0" width="30px" src="../../resources/assets/git.png"> <a href="https://git-scm.com/">Git</a></div>
-          <div><img class="reset-img" style="margin: 0" width="30px" src="../../resources/assets/node-logo.png"> <a href="https://nodejs.org/">Node.js</a></div>
-          <div><img class="reset-img" style="margin: 0" width="30px" src="../../resources/assets/npm-logo.png"> <a href="https://www.npmjs.com/">npm</a> / <a href="https://yarnpkg.com/lang/en/docs/yarn-lock/">yarn</a></div>
-          <div><img class="reset-img" style="margin: 0" width="30px" src="../../resources/assets/webpack-logo.png"> <a href="https://webpack.js.org/">Webpack</a></div>
-          <div><img class="reset-img" style="margin: 0" width="30px" src="../../resources/assets/vscode-logo.png"> <a href="https://code.visualstudio.com/">VSCode</a></div>
-          <div><img class="reset-img" style="margin: 0" width="30px" src="../../resources/assets/cli-logo.png"> <a href="../../resources/assets/puke-emoji.png">Windows CMD</a> / <a href="https://conemu.github.io/">Other cli tool</a></div>
-        </div>
-      </section>
-      <section>
-        <h3>🛠 What are we going to build?</h3>
-      </section>
-      <section>
-        <h3><img class="reset-img" style="margin: 0" width="70px" src="../../resources/assets/debug-logo.png"> How to debug</h3>
-        <div><a href="https://developers.google.com/web/tools/chrome-devtools/">Chrome Developer Tools</a></div>
-        <div><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Developer Tools</a></div>
-      </section>
-      <section>
-        <h3>Starting a FE project</h3>
-        <div>
-          <span>package.json, 
-          tsconfig.json, 
-          tslint.json, 
-          webpack.config.js, 
-          webpack.config.prod.js, 
-          index.html, 
-          uglify.js, 
-          service-worker.js, 
-          jest.config.js... 🤯</span>
-        </div>
-    </section>
-    <section>
-        <h3>😌</h3>
-        <pre><code class="language-markup" data-trim>npx create-react-app my-app --typescript</code></pre>
-    </section>
-      <section>
-        <h3>🛠 Try it</h3>
-        <ul>
-          <li>Create a new React-ts project using create-react-app</li>
-          <li>Change title to Hello Memorize!</li>
-        </ul>
-      </section>  
-
+        </section>
+        <section>
+          <img
+            style="display: inline-block; margin: 0"
+            class="reset-img"
+            width="70px"
+            src="../../resources/assets/tc39.png"
+          />
+          <h3 style="display: inline-block">What is ECMAScript?</h3>
+        </section>
+        <section>
+          <h3>ES Versions History</h3>
+          <img class="reset-img" src="../../resources/assets/js-history.png" />
+        </section>
+        <section data-transition="slide-in none-out">
+          <h3 style="text-align: left">ES5</h3>
+        </section>
+        <section data-transition="none-in none-out">
+          <h3 style="text-align: left">ES5 ► ES6</h3>
+        </section>
+        <section data-transition="none-in none-out">
+          <h3 style="text-align: left">ES5 ► ES2015</h3>
+        </section>
+        <section data-transition="none-in slide-out">
+          <h3 style="text-align: left">ES5 ► ES2015 ► ES2016 ► ... 🔮</h3>
+        </section>
+        <section>
+          <h3>ESNext</h3>
+          <p>https://kangax.github.io/compat-table/esnext/</p>
+          <iframe
+            width="100%"
+            height="500px"
+            src="http://kangax.github.io/compat-table/esnext/"
+          ></iframe>
+        </section>
+        <section>
+          <img
+            style="display: inline-block; margin: 0"
+            class="reset-img"
+            width="70px"
+            src="../../resources/assets/ts-logo.png"
+          />
+          <h3 style="display: inline-block">Typescript</h3>
+          <div
+            style="
+              text-align: left;
+              font-size: 36px;
+              margin: auto;
+              margin-top: 60px;
+              width: 570px;
+            "
+          >
+            <div>Static Typing</div>
+            <div>Syntactical superset of JavaScript</div>
+            <div>Transpiles to JavaScript</div>
+          </div>
+        </section>
+        <section>
+          <img
+            class="reset-img"
+            width="500px"
+            src="../../resources/assets/es-ts.png"
+          />
+        </section>
+        <section>
+          <h3>Dev environment</h3>
+          <div style="text-align: left; width: 600px; margin: auto">
+            <div>
+              <img
+                class="reset-img"
+                style="margin: 0"
+                width="30px"
+                src="../../resources/assets/git.png"
+              />
+              <a href="https://git-scm.com/">Git</a>
+            </div>
+            <div>
+              <img
+                class="reset-img"
+                style="margin: 0"
+                width="30px"
+                src="../../resources/assets/node-logo.png"
+              />
+              <a href="https://nodejs.org/">Node.js</a>
+            </div>
+            <div>
+              <img
+                class="reset-img"
+                style="margin: 0"
+                width="30px"
+                src="../../resources/assets/npm-logo.png"
+              />
+              <a href="https://www.npmjs.com/">npm</a> /
+              <a href="https://yarnpkg.com/lang/en/docs/yarn-lock/">yarn</a>
+            </div>
+            <div>
+              <img
+                class="reset-img"
+                style="margin: 0"
+                width="30px"
+                src="../../resources/assets/webpack-logo.png"
+              />
+              <a href="https://webpack.js.org/">Webpack</a>
+            </div>
+            <div>
+              <img
+                class="reset-img"
+                style="margin: 0"
+                width="30px"
+                src="../../resources/assets/vscode-logo.png"
+              />
+              <a href="https://code.visualstudio.com/">VSCode</a>
+            </div>
+            <div>
+              <img
+                class="reset-img"
+                style="margin: 0"
+                width="30px"
+                src="../../resources/assets/cli-logo.png"
+              />
+              <a href="../../resources/assets/puke-emoji.png">Windows CMD</a> /
+              <a href="https://conemu.github.io/">Other cli tool</a>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>🛠 What are we going to build?</h3>
+        </section>
+        <section>
+          <h3>
+            <img
+              class="reset-img"
+              style="margin: 0"
+              width="70px"
+              src="../../resources/assets/debug-logo.png"
+            />
+            How to debug
+          </h3>
+          <div>
+            <a href="https://developers.google.com/web/tools/chrome-devtools/"
+              >Chrome Developer Tools</a
+            >
+          </div>
+          <div>
+            <a
+              href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi"
+              >React Developer Tools</a
+            >
+          </div>
+        </section>
+        <section>
+          <h3>Starting a FE project</h3>
+          <div>
+            <span
+              >package.json, tsconfig.json, tslint.json, webpack.config.js,
+              webpack.config.prod.js, index.html, uglify.js, service-worker.js,
+              jest.config.js... 🤯</span
+            >
+          </div>
+        </section>
+        <section>
+          <h3>😌</h3>
+          <pre><code class="language-markup" data-trim>npx create-react-app my-app --template typescript</code></pre>
+        </section>
+        <section>
+          <h3>🛠 Try it</h3>
+          <ul>
+            <li>Create a new React-ts project using create-react-app</li>
+          </ul>
+        </section>
+      </div>
     </div>
-  </div>
-  <script src="../../resources/reveal.js/lib/js/head.min.js"></script>
-  <script src="../../resources/reveal.js/js/reveal.js"></script>
-  <script>
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      transition: 'slide', // none/fade/slide/convex/concave/zoom
-      dependencies: [
-        { src: '../../resources/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-        // { src: '../../resources/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-        // { src: '../../resources/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-        // { src: '../../resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-        { src: '../../resources/reveal.js/plugin/zoom-js/zoom.js', async: true },
-        { src: '../../resources/reveal.js/plugin/notes/notes.js', async: true }
-      ]
-    });
-  </script>
-  <script src="../../resources/prism/prism.js"></script>
-</body>
-
+    <script src="../../resources/reveal.js/lib/js/head.min.js"></script>
+    <script src="../../resources/reveal.js/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+        dependencies: [
+          {
+            src: "../../resources/reveal.js/lib/js/classList.js",
+            condition: function () {
+              return !document.body.classList;
+            },
+          },
+          // { src: '../../resources/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+          // { src: '../../resources/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+          // { src: '../../resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+          {
+            src: "../../resources/reveal.js/plugin/zoom-js/zoom.js",
+            async: true,
+          },
+          {
+            src: "../../resources/reveal.js/plugin/notes/notes.js",
+            async: true,
+          },
+        ],
+      });
+    </script>
+    <script src="../../resources/prism/prism.js"></script>
+  </body>
 </html>

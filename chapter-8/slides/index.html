@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Meet React.js</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../resources/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../../resources/reveal.js/css/theme/night.css">
+  <link rel="stylesheet" href="../../resources/reveal.js/lib/css/zenburn.css">
+  <link rel="stylesheet" href="../../resources/prism/prism.css" />
+  <style>
+    body {
+      background-image: url(../../resources/assets/react-logo-dark.svg);
+      background-repeat: no-repeat;
+      background-size: 50% auto;
+      background-position: -25% -60%;
+    }
+
+    .reset-img {
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <a style="position: fixed; left: 20px; font-size: 30px" href="../../">◀</a>
+        <h3><img class="reset-img" style="margin: 0" width="70px" src="../../resources/assets/redux-logo.png"> Redux</h3>
+      </section>
+      <section>
+          <i>“Photography is truth. The cinema is truth 24 times per second.”</i>
+          <div><i style="font-size: 18px">Jean-Luc Godard</i></div>
+      </section>
+      <section data-transition="slide-in none-out">
+        <h3>Original</h3>
+        <img class="reset-img" src="../../resources/assets/gimp-1.jpg" />
+      </section>
+      <section data-transition="none-in none-out">
+          <h3>Resize</h3>
+          <img class="reset-img" src="../../resources/assets/gimp-1.jpg" />
+        </section>
+      <section data-transition="none-in none-out">
+        <h3>White balance</h3>
+        <img class="reset-img" src="../../resources/assets/gimp-2.jpg" />
+      </section>
+      <section data-transition="none-in slide-out">
+        <h3>Cartoon</h3>
+        <img class="reset-img" src="../../resources/assets/gimp-3.jpg" />
+      </section>
+      <section>
+        <img class="reset-img" src="../../resources/assets/gimp-history.png" />
+      </section>
+      <section data-transition="slide-in none-out">
+        <img class="reset-img" src="../../resources/assets/state-action-0.png" />
+      </section>
+      <section data-transition="none-in none-out">
+        <img class="reset-img" src="../../resources/assets/state-action-1.png" />
+      </section>
+      <section data-transition="none-in none-out">
+        <img class="reset-img" src="../../resources/assets/state-action-2.png" />
+      </section>
+      <section data-transition="none-in slide-out">
+        <img class="reset-img" src="../../resources/assets/state-action-3.png" />
+      </section>
+      <section>
+        <h3>Unidirectional data flow</h3>
+        <img class="reset-img" src="../../resources/assets/unidirectional-flow.png">
+      </section>
+      <section>
+        <h3>View</h3>
+        <div>React components tree</div>
+      </section>
+      <section>
+        <h3>Action</h3>
+        <div>Unified way to communicate</div>
+        <pre><code class="language-tsx" data-trim>{
+  type: 'START_GAME'
+}</code></pre>
+        <pre><code class="language-tsx" data-trim>{
+  type: 'SELECT_CARD',
+  payload: { id: 32 }
+}</code></pre>
+      </section>
+      <section>
+        <h3>Action creator</h3>
+        <div>Simple functions that create actions</div>
+<pre><code class="language-tsx" data-trim>export const selectCard = (id: number) => ({
+    type: 'SELECT_CARD',
+    payload: id
+});</code></pre>
+      </section>
+      <section>
+        <h3>Reducers</h3>
+        <div>The only way to create a new state</div>
+        <pre><code class="language-tsx" data-trim>const gameReducer: Reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case SELECT_CARD:
+            return {
+                ...state,
+                selectedCard: action.payload,
+            };
+        default:
+            return state;
+    }
+};</code></pre>
+<i style="font-size: 30px">State is immutable!</i>
+      </section>
+      <section>
+        <h3>Store</h3>
+        <div>Holds the single application state</div>
+        <div>Single source of truth</div>
+        <pre><code class="language-tsx" data-trim>export const store = createStore(gameReducer);</code></pre>
+      </section>
+      <section>
+        <h3>Redux Middlewares</h3>
+      </section>
+      <section>
+        <ul>
+          <li>Business logic</li>
+          <li>Action in - Action out</li>
+          <li>Piped to each other, order matters!</li>
+        </ul>
+      </section>
+      <section data-transition="slide-in none-out">
+        <img class="reset-img" src="../../resources/assets/redux-middlewares-01.png">
+      </section>
+      <section data-transition="none-in none-out">
+        <img class="reset-img" src="../../resources/assets/redux-middlewares-02.png">
+      </section>
+      <section data-transition="none-in none-out">
+        <img class="reset-img" src="../../resources/assets/redux-middlewares-03.png">
+      </section>
+      <section data-transition="none-in slide-out">
+        <img class="reset-img" src="../../resources/assets/redux-middlewares-04.png">
+      </section>
+      <section>
+        <h3>Middleware signature</h3>
+        <pre><code class="language-tsx" data-trim>const myMiddleware: Middleware = (store) => (next) => (action) => {
+  if (action.type === START_GAME) {
+    store.dispatch(actions.shuffleCards());
+  } else {
+    next(action);
+  }
+}</code></pre>
+      </section>
+      <section>
+        <img class="reset-img" src="../../resources/assets/redux-middlewares-05.png">
+      </section>
+      
+      <section>
+        <img class="reset-img" height="100px" src="../../resources/assets/react-redux.png">
+        <h3>React-Redux</h3>        
+      </section>
+      <section>
+          <img class="reset-img" height="600px" src="../../resources/assets/redux-floor-without-redux.webp">
+          <br>
+          <i style="font-size: 20px;">source: https://www.smashingmagazine.com/2018/07/redux-designers-guide/</i>
+      </section>
+      <section>
+          <img class="reset-img" height="600px" src="../../resources/assets/redux-floor-with-redux.webp">
+          <br>
+          <i style="font-size: 20px;">source: https://www.smashingmagazine.com/2018/07/redux-designers-guide/</i>
+      </section>
+      <section>
+        <h3>Providing the store</h3>
+      </section>
+      <section>
+          <h3>Store Provider</h3>
+          <pre><code class="language-tsx" data-trim>import { Provider } from 'react-redux';
+
+&lt;Provider store={store}>
+  &lt;App />
+&lt;/Provider></code></pre>
+      </section>
+      <section>
+        <h3>Accessing the store</h3>
+      </section>
+      <section>
+        <h3>Connect state to props</h3>
+        <pre><code class="language-tsx" data-trim>import { connect } from 'react-redux';
+
+type PropsFromState =  Pick&lt;GameState, 'moves'>;
+
+const mapStateToProps = (state: GameState): PropsFromState => ({
+  moves: state.moves,
+});
+
+const ConnectedCongrats = connect(mapStateToProps)(Congrats); </code></pre>
+      </section>
+      <section>
+          <h3>use it</h3>
+          <pre><code class="language-tsx" data-trim>type CongratsProps = InnerProps & PropsFromState;
+
+const Congrats: React.FC&lt;CongratsProps> = ({moves}) => 
+      (&lt;div className="score">Score: {moves}&lt;/div>);</code></pre>
+      </section>
+      <section>
+        <h3>🔥 Fire some actions</h3>
+      </section>
+      <section>
+          <h3>Connect actions to props</h3>
+          <pre><code class="language-tsx" data-trim>import { connect } from 'react-redux';
+import * as actions from './actions';
+
+interface PropsFromDispatch {
+  startGame: typeof actions.startGame;
+}
+
+const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
+  startGame: () => dispatch(actions.startGame()),
+});
+
+const ConnectedCongrats = connect(null, mapDispatchToProps)(Congrats);</code></pre>
+        </section>
+        <section>
+          <h3>use it</h3>
+          <pre><code class="language-tsx" data-trim>type CongratsProps = InnerProps & PropsFromDispatch;
+
+const Congrats: React.FC&lt;CongratsProps> = ({startGame}) => 
+      (&lt;button onClick={startGame}>Start game&lt;/button>);</code></pre>
+      </section>
+      <section>
+          <h3>🛠 Try it</h3>
+          <ul>
+            <li>Create a new Redux store</li>
+            <li>Move all logic from Game component</li>
+            <li>Connect the store to the app</li>
+          </ul>
+      </section>
+    </div>
+  </div>
+  <script src="../../resources/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../resources/reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      dependencies: [
+        { src: '../../resources/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+        // { src: '../../resources/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        // { src: '../../resources/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        // { src: '../../resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: '../../resources/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../../resources/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+  <script src="../../resources/prism/prism.js"></script>
+</body>
+
+</html>

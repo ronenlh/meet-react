@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Testing</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../resources/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../../resources/reveal.js/css/theme/night.css">
+  <link rel="stylesheet" href="../../resources/reveal.js/lib/css/zenburn.css">
+  <link rel="stylesheet" href="../../resources/prism/prism.css" />
+  <style>
+    body {
+      background-image: url(../../resources/assets/react-logo-dark.svg);
+      background-repeat: no-repeat;
+      background-size: 50% auto;
+      background-position: -25% -60%;
+    }
+
+    .reset-img {
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <a style="position: fixed; left: 20px; font-size: 30px" href="../../">◀</a>
+        <h3><img class="reset-img" style="margin: 0" width="70px" src="../../resources/assets/jest-logo.png"> Tests</h3>
+      </section>
+      <section>
+          <i>“Asking a question should not change the answer”</i>
+          <div><i style="font-size: 18px">Meyer, Bertrand. "Eiffel: a language for software engineering"</i></div>
+      </section>
+      <section>
+        <h3>Tests environment</h3>
+        <ul>
+          <li>Testing framework: Jasmine / Mocha</li>
+          <li>Test runner: Karma / Chutzpah / Phantomjs</li>
+          <li>Assertions library: Chai / Should.js</li>
+          <li>Mocking library: Sinon.js / Jasmine</li>
+          <li>Code coverage: Istanbul</li>
+          <li>Snapshot tests</li>
+        </ul>
+        <div>🤯</div>
+      </section>
+      <section>
+        <h3>🎁 Meet Jest</h3>
+        <i>Complete and ready to set-up JS testing solution</i>
+      </section>
+      <section>
+        <h3>🕹 Behaviour Driven Development</h3>
+      </section>
+      <section>
+        <h3>🚀 Running the tests</h3>
+      </section>
+      <section>
+        <h3>⏱ Collecting coverage</h3>
+      </section>
+      <section>
+        <h3>⚖️ Assertions</h3>
+      </section>
+      <section>
+        <div style="display: flex; justify-content: center; align-items: baseline">
+          <img style="margin: 0; padding-right: 10px" class="reset-img" height="100px" src="../../resources/assets/inspector-gadget.png"/>
+          <h3>Spies</h3>
+        </div>
+      </section>
+      <section>
+        <div style="display: flex; justify-content: center; align-items: baseline">
+          <img class="reset-img" height="150px" src="../../resources/assets/the-mask.png"/>
+          <h3>Mocks</h3>
+        </div>
+      </section>
+      <section>
+        <h3>🎢🎠🎡 Mocking modules</h3>
+      </section>
+      <section>
+        <h3>📸 Snapshot testing</h3>
+      </section>
+      <section>
+          <h3>🛠 Try it</h3>
+      </section>
+    </div>
+  </div>
+  <script src="../../resources/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../resources/reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      dependencies: [
+        { src: '../../resources/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+        // { src: '../../resources/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        // { src: '../../resources/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        // { src: '../../resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: '../../resources/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../../resources/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+  <script src="../../resources/prism/prism.js"></script>
+</body>
+
+</html>

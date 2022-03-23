@@ -20,7 +20,7 @@
 </style>
 
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="pZZr9VTZLn8T5dzAGKm8p9ng6j5ELG3qEhS6OM9RLh5FO1/zwbLbt3Ez+RS9FzXlun1hz9qiFGe3QjI4gRbJXw==" />
+<meta name="csrf-token" content="5Kw1oJnkwNymn4crX753aKiksfyWvnBdOtI5hLRTdzQEAQGmDI81FMRJov/6AP4qyzk6DQgwCdCfhLGE+hSQdQ==" />
 <style id="user-css-output" type="text/css">.reveal .monospace-font h1,
 .reveal .monospace-font h2,
 .reveal .monospace-font h3 {
@@ -436,18 +436,229 @@ const Example = () {
         </div>
         <div class="sl-block" data-block-type="text" style="width: 908px; left: 6px; top: 57.5px; height: auto;" data-name="text-c29943" data-block-id="0abe89e02915ad2247de0ca4dad9fe2a"><div class="sl-block-content" data-placeholder-tag="h2" style="text-align: left; z-index: 13; color: rgb(255, 255, 255); font-size: 90%; line-height: 1.17;" dir="ui" data-has-line-height="" data-placeholder-text="Text">
             <h2>useEffect</h2>
-        </div></div></section><section data-id="4511695a80952a8824eba764ab0f03e2"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 266.25px;" data-name="text-2573ff" data-block-id="208cb5c17dc0bfbcbcbb79defd30e8c3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
-        <h2>Side Effects in React</h2>
+        </div></div></section><section data-id="da00aa79405011f3ebd966bf257e7475"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 266.25px;" data-name="text-2573ff" data-block-id="8829e012b8e51e3cc66d779ed15c3b62"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+        <h2>Classes</h2>
     </div></div>
-        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 355.75px;" data-name="text-a781a7" data-block-id="fe016d10721efaa2984bb5a76997bb12"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-            <p>React components should be pure!</p>
-        </div></div></section>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 355.75px;" data-name="text-a781a7" data-block-id="02fd234edf14ac47deb14bc3bce066a8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+            <p>State and Effects</p>
+        </div></div></section><section data-id="140b82031a76d833c2baeedf7ce5db3f" data-auto-animate=""><div class="sl-block" data-block-type="text" style="width: 928px; left: 6px; top: 57.5px; height: auto;" data-name="text-c29943" data-block-id="019aa260eee72727c34808797011144f">
+        <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h2" style="text-align: left; z-index: 10; color: rgb(255, 255, 255); line-height: 1.17; font-size: 90%;" dir="ui" data-has-line-height="" data-placeholder-text="Text">
+            <h1>this.state</h1>
+        </div></div>
+    </div>
+
+
+        <div class="sl-block" data-block-type="code" style="width: 948px; height: 528px; left: 6px; top: 158px;" data-name="code-ea06ce2" data-block-id="428bbff6fecd77519202365c4cdb56b4">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0.98; transform: rotate(0deg);">
+                <div class="sl-block-content notranslate" data-highlight-theme="ir-black" style="z-index: 11; border-style: solid; border-radius: 4px;" data-code-frame="osx">
+            <pre class="xml"><code style="padding: 15px;" data-line-numbers="|4|10">class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="sl-block" data-block-type="text" style="width: 160px; left: 6px; top: 1.5px; height: auto;" data-name="text-3f789d" data-block-id="d93e83f90aaf17b85b6200fee9b67f2b">
+            <div class="sl-block-style" style="z-index: 13; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-placeholder-tag="pre" style="z-index: 13; text-align: left; font-size: 44%; color: rgb(28, 235, 123); padding: 5px; background-color: rgba(0, 0, 0, 0);" dir="ui" data-placeholder-text="Text">
+                <pre># PRESENTING CODE</pre>
+            </div></div>
+        </div>
+        <div class="sl-block" data-block-type="line" data-name="line-49cd6b" style="width: auto; height: auto; left: 166px; top: 14px;" data-block-id="5c7bae1211cc58d41794cb7f2e7438c1">
+            <div class="sl-block-style" style="z-index: 12; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="787" data-line-y2="0.5" data-line-color="#1ceb7b" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="787" height="1" viewbox="0 0 787 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="787" y2="0.5"></line><line class="line-element" stroke="#1ceb7b" stroke-width="2" x1="0" y1="0" x2="787" y2="0.5"></line></svg></div></div>
+        </div></section><section data-auto-animate="" data-id="6f553bbc6e1cd610af754d6a2df62abf"><div class="sl-block" data-block-type="text" style="width: 928px; left: 6px; top: 57.5px; height: auto;" data-name="text-c29943" data-block-id="94e72ac8f78225817b325b49545a2b56">
+        <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h2" style="text-align: left; z-index: 10; color: rgb(255, 255, 255); line-height: 1.17; font-size: 90%;" dir="ui" data-has-line-height="" data-placeholder-text="Text">
+            <h2>this.setState()</h2>
+        </div></div>
+    </div>
+
+
+        <div class="sl-block" data-block-type="code" style="width: 948px; height: 528px; left: 6px; top: 158px;" data-name="code-ea06ce2" data-block-id="d4d08cf31570b0eab242e069d81df6f1">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0.98; transform: rotate(0deg);">
+                <div class="sl-block-content notranslate" data-highlight-theme="ir-black" style="z-index: 11; border-style: solid; border-radius: 4px;" data-code-frame="osx">
+            <pre class="xml"><code style="padding: 15px;" data-line-numbers="">class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="sl-block" data-block-type="text" style="width: 160px; left: 6px; top: 1.5px; height: auto;" data-name="text-3f789d" data-block-id="6add01f1725848ffb0a93501106be256">
+            <div class="sl-block-style" style="z-index: 13; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-placeholder-tag="pre" style="z-index: 13; text-align: left; font-size: 44%; color: rgb(28, 235, 123); padding: 5px; background-color: rgba(0, 0, 0, 0);" dir="ui" data-placeholder-text="Text">
+                <pre># PRESENTING CODE</pre>
+            </div></div>
+        </div>
+        <div class="sl-block" data-block-type="line" data-name="line-49cd6b" style="width: auto; height: auto; left: 166px; top: 14px;" data-block-id="91e1e0f50f2ca02d2a01011ec12d3aca">
+            <div class="sl-block-style" style="z-index: 12; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="787" data-line-y2="0.5" data-line-color="#1ceb7b" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="787" height="1" viewbox="0 0 787 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="787" y2="0.5"></line><line class="line-element" stroke="#1ceb7b" stroke-width="2" x1="0" y1="0" x2="787" y2="0.5"></line></svg></div></div>
+        </div></section><section data-auto-animate="" data-id="0edf8268e6b2fe5fdd0c9ffdb60ba450"><div class="sl-block" data-block-type="text" style="width: 928px; left: 6px; top: 57.5px; height: auto;" data-name="text-c29943" data-block-id="e6828fb0df6f4f61bf878c98944612e4">
+        <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h2" style="text-align: left; z-index: 10; color: rgb(255, 255, 255); line-height: 1.17; font-size: 90%;" dir="ui" data-has-line-height="" data-placeholder-text="Text">
+            <h2>Lifecycle Methods</h2>
+        </div></div>
+    </div>
+
+
+        <div class="sl-block" data-block-type="code" style="width: 948px; height: 528px; left: 6px; top: 158px;" data-name="code-ea06ce2" data-block-id="0c793ecab1c9d1d3ea3eeee73f75de2b">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0.98; transform: rotate(0deg);">
+                <div class="sl-block-content notranslate" data-highlight-theme="ir-black" style="z-index: 11; border-style: solid; border-radius: 4px;" data-code-frame="osx">
+            <pre class="xml" style="font-size: 12px; line-height: 14px;"><code style="padding: 15px;" data-line-numbers="|4|10">class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date()};  }
+
+  componentDidMount() {
+    this.timerID = window.setInterval(
+      () =&gt; this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="sl-block" data-block-type="text" style="width: 160px; left: 6px; top: 1.5px; height: auto;" data-name="text-3f789d" data-block-id="4442c33b9d4f515d0f04da1e8535a188">
+            <div class="sl-block-style" style="z-index: 13; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-placeholder-tag="pre" style="z-index: 13; text-align: left; font-size: 44%; color: rgb(28, 235, 123); padding: 5px; background-color: rgba(0, 0, 0, 0);" dir="ui" data-placeholder-text="Text">
+                <pre># PRESENTING CODE</pre>
+            </div></div>
+        </div>
+        <div class="sl-block" data-block-type="line" data-name="line-49cd6b" style="width: auto; height: auto; left: 166px; top: 14px;" data-block-id="f3564823be4911fbc18593a518ce1795">
+            <div class="sl-block-style" style="z-index: 12; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="787" data-line-y2="0.5" data-line-color="#1ceb7b" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="787" height="1" viewbox="0 0 787 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="787" y2="0.5"></line><line class="line-element" stroke="#1ceb7b" stroke-width="2" x1="0" y1="0" x2="787" y2="0.5"></line></svg></div></div>
+        </div></section><section data-auto-animate="" data-id="68fa4a021952b596976ad44636560767"><div class="sl-block" data-block-type="text" style="width: 928px; left: 6px; top: 57.5px; height: auto;" data-name="text-c29943" data-block-id="cccf123a721621bb5b8742b89a38455f">
+        <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h2" style="text-align: left; z-index: 10; color: rgb(255, 255, 255); line-height: 1.17; font-size: 90%;" dir="ui" data-has-line-height="" data-placeholder-text="Text">
+            <h2>Refactor this into Hooks!</h2>
+        </div></div>
+    </div>
+
+
+        <div class="sl-block" data-block-type="code" style="width: 948px; height: 528px; left: 6px; top: 158px;" data-name="code-ea06ce2" data-block-id="ac1748a9be6f700a9f8d9bba21fab160">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0.98; transform: rotate(0deg);">
+                <div class="sl-block-content notranslate" data-highlight-theme="ir-black" style="z-index: 11; border-style: solid; border-radius: 4px;" data-code-frame="osx">
+            <pre class="xml" style="font-size: 10px; line-height: 12px;"><code style="padding: 15px;" data-line-numbers="|4|10">interface ClockProps {}
+interface ClockState {
+  date: Date;
+}
+
+class Clock extends React.Component&lt;ClockProps, ClockState&gt; {
+  timerID?: number;
+
+  constructor(props: ClockProps) {
+    super(props);
+    this.state = {
+      date: new Date()
+    };
+  }
+
+  componentDidMount() {
+    this.timerID = window.setInterval(
+      () =&gt; this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;React.StrictMode&gt;
+    &lt;Clock/&gt;
+  &lt;/React.StrictMode&gt;,
+  document.getElementById('root')
+);</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="sl-block" data-block-type="text" style="width: 160px; left: 6px; top: 1.5px; height: auto;" data-name="text-3f789d" data-block-id="dbbf9a534af0e404b0467535236321c7">
+            <div class="sl-block-style" style="z-index: 13; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-placeholder-tag="pre" style="z-index: 13; text-align: left; font-size: 44%; color: rgb(28, 235, 123); padding: 5px; background-color: rgba(0, 0, 0, 0);" dir="ui" data-placeholder-text="Text">
+                <pre># PRESENTING CODE</pre>
+            </div></div>
+        </div>
+        <div class="sl-block" data-block-type="line" data-name="line-49cd6b" style="width: auto; height: auto; left: 166px; top: 14px;" data-block-id="e0310bcbf86747757b82cb74ff75ca7e">
+            <div class="sl-block-style" style="z-index: 12; filter: drop-shadow(rgba(28, 235, 123, 0.5) 0px 0px 5px);"><div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="787" data-line-y2="0.5" data-line-color="#1ceb7b" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="787" height="1" viewbox="0 0 787 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="787" y2="0.5"></line><line class="line-element" stroke="#1ceb7b" stroke-width="2" x1="0" y1="0" x2="787" y2="0.5"></line></svg></div></div>
+        </div></section>
     </div>
 </div>
 
 
 <script>
-    var SLConfig = {"current_user":{"id":2053463,"username":"ronenl","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/acf377f4b5e664c14c50b1c783eebebe?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":25711828,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":false,"speaker_layout":null,"speaker_theme":null,"phone_number":null,"phone_country_code":null,"media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null,"auto_animate_tutorial_completed":true,"profile_sorting":"created","profile_layout":"grid"},"email":"ronenmail@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":0,"storage_limit":262144000,"image_upload_limit":10485760,"video_upload_limit":104857600},"deck":{"id":2364406,"slug":"code-5b71b2","title":"Code","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2022-03-22T19:28:52.663Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/fa5484f91f2c117f092c045cec577673/thumb.jpg?1647977371","view_count":0,"user":{"id":2053463,"username":"ronenl","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/acf377f4b5e664c14c50b1c783eebebe?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":25711828,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"none","transition":"none","theme_id":null,"theme_font":"helvetica","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":false,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":20,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":null,"data_updated_at":1647977761617,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":true,"notes":{}},"user":{"id":2053463,"username":"ronenl","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/acf377f4b5e664c14c50b1c783eebebe?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":25711828,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+    var SLConfig = {"current_user":{"id":2053463,"username":"ronenl","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/acf377f4b5e664c14c50b1c783eebebe?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":25711828,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":false,"speaker_layout":null,"speaker_theme":null,"phone_number":null,"phone_country_code":null,"media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null,"auto_animate_tutorial_completed":true,"profile_sorting":"created","profile_layout":"grid"},"email":"ronenmail@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":0,"storage_limit":262144000,"image_upload_limit":10485760,"video_upload_limit":104857600},"deck":{"id":2364406,"slug":"code-5b71b2","title":"Code","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2022-03-22T19:28:52.663Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/fa5484f91f2c117f092c045cec577673/thumb.jpg?1647977371","view_count":0,"user":{"id":2053463,"username":"ronenl","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/acf377f4b5e664c14c50b1c783eebebe?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":25711828,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"none","transition":"none","theme_id":null,"theme_font":"helvetica","theme_color":"black-mint","auto_slide_interval":0,"comments_enabled":false,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":24,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":null,"data_updated_at":1648019222453,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":true,"notes":{}},"user":{"id":2053463,"username":"ronenl","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/acf377f4b5e664c14c50b1c783eebebe?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":25711828,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
 
 <script>

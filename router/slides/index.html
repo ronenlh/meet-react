@@ -36,10 +36,6 @@
         <h3>React Router</h3>
       </section>
       <section>
-          <i>“Complete freedom is not what a trail offers. Quite the opposite; a trail is a tactful reduction of options.”</i> 
-          <div><i style="font-size: 18px">Robert Moor, On Trails: An Exploration</i></div>
-      </section>
-      <section>
         <h3>How browser navigation works</h3>
         <img class="reset-img" src="../../resources/assets/browser-routing.png" />
       </section>
@@ -47,8 +43,8 @@
           <h3>History API</h3>
           <pre><code class="language-jsx" data-trim>history.back() // or history.go(-1)
 history.forward() // or history.go(1)
-history.go(n) // relative to current. 0 to refresh. 
-history.pushState(state, title, url) 
+history.go(n) // relative to current. 0 to refresh.
+history.pushState(state, title, url)
 history.replaceState(state, title, url)</code></pre>
       </section>
       <section>
@@ -87,7 +83,7 @@ app.listen();</code></pre>
       </section>
       <section>
         <img class="reset-img" style="margin: 0" width="100px" src="../../resources/assets/react-router.png">
-        <h3>React router v4</h3>
+        <h3>React router v6</h3>
       </section>
       <section>
         <h3>Everything is a component</h3>
@@ -96,9 +92,9 @@ app.listen();</code></pre>
 const App = () => (
   &lt;BrowserRouter>
     &lt;div>
-      &lt;Route path="/tacos" component={Tacos}/>
-      &lt;Route path="/nachos" component={Nachos}/>
-      &lt;Route path="/burritos" component={Burritos}/>
+      &lt;Route path="/tacos" element={<Tacos />}/>
+      &lt;Route path="/nachos" element={<Nachos />}/>
+      &lt;Route path="/burritos" element={<Burritos />}/>
     &lt;/div>
   &lt;/BrowserRouter>
 );</code></pre>
@@ -110,7 +106,7 @@ const App = () => (
 const Tacos: React.FC = () => (
     &lt;Route
       path="/tacos/carnitas" // absolute route
-      component={Carnitas}
+      element={<Carnitas />}
     />
 );
 
@@ -124,7 +120,7 @@ export Tacos;
 const Tacos: React.FC&lt;RouteComponentProps&lt;TacosProps>>  = (props) => (
     &lt;Route
       path={props.match.url + '/carnitas'}
-      component={Carnitas}
+      element={<Carnitas />}
     />
 );
 
@@ -153,14 +149,6 @@ const GetTacos: React.FC&lt;RouteComponentProps&lt;Props>> = (props) => (
     &lt;/button>);
 
 export const GetTacosWithRouter = withRouter(GetTacos);</code></pre>
-      </section>      
-      <section>
-          <h3>🛠 Try it</h3>
-          <ul>
-            <li>Add main page to the game with 2 buttons: <b>Start game</b> and <b>Info</b></li>
-            <li><b>Start game</b> navigates to game component and starts a new game</li>
-            <li><b>Info</b> navigates to game info component with details about the app</li>
-          </ul>
       </section>
     </div>
   </div>

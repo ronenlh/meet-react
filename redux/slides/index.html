@@ -1014,10 +1014,10 @@ ReactDOM.render(
             <div class="sl-block-style" style="z-index: 11; opacity: 0.98; transform: rotate(0deg);">
                 <div class="sl-block-content notranslate" data-highlight-theme="ir-black" style="z-index: 11; border-style: solid; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; transition-duration: 0.6s; transition-delay: 0.1s;" data-code-frame="osx" data-animation-type="slide-up">
             <pre class="javascript" style="font-size: 18px; line-height: 22px;"><code style="padding: 15px;" data-line-numbers="|2,5,15|2,6,11,17">import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment, selectCount } from './counterSlice';
+import { decrement, increment } from './counterSlice';
 
 export const Counter = () =&gt; {
-  const count = useSelector(selectCount);
+  const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
 
   return (
